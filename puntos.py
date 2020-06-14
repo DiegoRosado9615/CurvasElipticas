@@ -53,6 +53,11 @@ class Punto:
         """Imprimir la cadena"""
         return "x = " + str( self.x ) + ", y = " + str(self.y)
 
+class Curva:
+	def __init__ (self, A, B, campo):
+		self.a = A
+		self.b = B
+		self.p = campo
 
 
 punto1= Punto(15,-4)
