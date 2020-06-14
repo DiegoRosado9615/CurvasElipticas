@@ -64,20 +64,20 @@ class Curva:
 			print("Curva: y² = x³ + x +"+str(self.b))
 		else:
 			print("Curva: y² = x³ + "+str(self.a)+"x + "+str(self.b))
-
+		print("Puntos")
 		for i in range(0,self.p):
 			x = ((i**3) + (self.a*i) + self.b) % self.p
 			for j in range(0,self.p):
 				y = (j**2) % self.p
 				if x==y:
-					print("("+str(i)+","+str(j)+")")
+					print("\t("+str(i)+","+str(j)+")")
 
 
 
 punto1= Punto(15,-4)
 punto2= Punto (331,-6000)
 
-curva = Curva(10,6,11)
+curva = Curva(1,6,11)
 curva.calculaPuntosEncurva()
 
 ##print(punto1.suma(punto2,20,35))##Esto es q2, y estoy sacando q3
