@@ -18,7 +18,7 @@ class Punto:
             return False
 
 
-    def lamb(self,punto2,a,p):
+    def lambd(self,punto2,a,p):
         x1=self.x
         y1=self.y
         x2=punto2.x
@@ -44,9 +44,9 @@ class Punto:
             return "O"
         else:
             punto3=Punto(0,0)
-            lamb=punto1.lamb(punto2,a,p)
-            punto3.x=(lamb * lamb)-x1-x2
-            punto3.y=lamb*(x1-punto3.x)-y1
+            lambd=punto1.lambd(punto2,a,p)
+            punto3.x=(lambd * lambd)-x1-x2
+            punto3.y=lambd*(x1-punto3.x)-y1
             return punto3
 
     def __str__(self):
