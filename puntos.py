@@ -41,7 +41,7 @@ class Punto:
         x2=punto2.x
         y2=punto2.y
         if( x1==x2 and ((y1*-1)== y2 )):
-            return "O"
+            return "infinito"
         else:
             punto3=Punto(0,0)
             lambd=punto1.lambd(punto2,a,p)
@@ -52,7 +52,7 @@ class Punto:
     def __str__(self):
         """Imprimir la cadena"""
         return "x = " + str( self.x ) + ", y = " + str(self.y)
-
+""" Clase curva: modela una curva eliptica """
 class Curva:
 	def __init__ (self, A, B, campo):
 		self.a = A
@@ -70,14 +70,19 @@ class Curva:
 			for j in range(0,self.p):
 				y = (j**2) % self.p
 				if x==y:
-					print("\t("+str(i)+","+str(j)+")")
+					print("\t("+str(i)+","+str(j)+"),")
+		print("\tO.")
+	""" Metodo que verifica si un punto esta dentro de la curva"""
+	##def esta(self, x, y):
 
 
 
-punto1= Punto(15,-4)
+
+punto1= Punto(2,7)
 punto2= Punto (331,-6000)
-
+punto3= Punto()
 curva = Curva(1,6,11)
 curva.calculaPuntosEncurva()
-
-##print(punto1.suma(punto2,20,35))##Esto es q2, y estoy sacando q3
+print("punto 1: "+ str(punto1))
+print("punto 2: "+ str(punto2))
+print("suma: "+str(punto1.suma(punto2,20,35)))##Esto es q2, y estoy sacando q3
