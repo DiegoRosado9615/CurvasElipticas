@@ -10,7 +10,7 @@ class Punto:
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
 	            return i;
-	    return 1;
+	    return -1;
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
     def esIgual(self,punto2):
@@ -45,13 +45,14 @@ class Punto:
         else:
             punto3=Punto(0,0)
             lambd=punto1.lambd(punto2,a,p)
-            punto3.x=(lambd * lambd)-x1-x2
-            punto3.y=lambd*(x1-punto3.x)-y1
+            punto3.x=((lambd * lambd)-x1-x2)%p
+            punto3.y=((lambd*(x1-punto3.x))-y1)%p
             return punto3
     """Metodo que genera la suma de puntos de manera extendida"""
     def sumaExtendida(self, punto):
     	##la idea es sumar el punto tantas veces hasta que ya no sea posible.
     	##es decir sacar la suma de forma lineal
+
     	"""
     		ejemplo
     		3P = P + P + P en vez de 2P + P
@@ -112,5 +113,7 @@ def ecuacion(limite):
         listaValor.append(valor)
     return listaValor
 
-punto1= Punto(2,7)
-print(punto1. metodCuadratico(11,13))
+punto1= Punto(5,2)
+punto2= Punto(8,3)
+print(punto1. suma(punto1,1,11))
+##print(punto1.inversoMultiplicativo(58,493))
