@@ -41,22 +41,26 @@ class Punto:
         x2=punto2.x
         y2=punto2.y
         if( x1==x2 and ((y1*-1)== y2 )):
-            return "infinito"
+            punto3=Punto(-1,-1)
+            return punto3
         else:
             punto3=Punto(0,0)
             lambd=punto1.lambd(punto2,a,p)
-            punto3.x=(lambd * lambd)-x1-x2
-            punto3.y=lambd*(x1-punto3.x)-y1
-            return punto3
-    """Metodo que genera la suma de puntos de manera extendida"""            
-    def sumaExtendida(self, punto):
-    	##la idea es sumar el punto tantas veces hasta que ya no sea posible.
-    	##es decir sacar la suma de forma lineal 
-    	"""
-    		ejemplo 
-    		3P = P + P + P en vez de 2P + P
+            punto3.x=((lambd * lambd)-x1-x2)%p
+            punto3.y=((lambd*(x1-punto3.x))-y1)%p
+        return punto3
+    """Metodo que genera la suma de puntos de manera extendida"""
+    def sumaExtendida(self,punto,a,p):
+    	listaPuntos = []
+    	contador = 0
+    	puntoNuevo = punto
+    	listaPuntos.append(punto)
+    	while contador < p:
+    		puntoNuevo=punto.suma(puntoNuevo,a,p)
+    		listaPuntos.append(puntoNuevo)
+    		contador = contador + 1
+    	return listaPuntos
 
-    	"""
     """Metodo que imprime un punto"""
     def __str__(self):
         return "(" + str( self.x ) + " , " + str(self.y)+")"
@@ -107,9 +111,11 @@ punto1= Punto(2,7)
 curva = Curva(1,6,11)
 curva.calculaPuntosEncurva()
 print("punto 1: \n\t"+ str(punto1))
-print("suma: "+str(punto1.suma(punto1,curva.a,curva.p)))##Esto es q2, y estoy sacando q3
-#print("esta: "+ str(punto1)+ "\ten "+str(curva)+": " + str(curva.esta(punto1)) )
-print("lambda: "+str(punto1.lambd(punto1, curva.a, curva.p)))
-print(punto1.esIgual(punto1))
-print(9%11)
-print(punto1.mcd(10,20))
+print()
+print("suma extendida")
+lista = punto1.sumaExtendida(punto1,1,11)
+
+for i in range(0,len(lista)):
+	print((lista[i]))
+
+
