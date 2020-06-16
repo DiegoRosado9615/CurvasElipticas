@@ -24,11 +24,11 @@ class Punto:
     	y2=punto2.y
     	if(self.esIgual(punto2)):
     		x1=x1*x1
-    		return (int(((3*x1) + a) / (2*y1)))%p
+    		return ((((3*x1) + a) / (2*y1))) % p
     	else:
     		if(x2==x1):
     			return "Division entre 0"
-    	return int((y2-y1)/(x2-x1))%p
+    	return ((y2-y1)/(x2-x1))%p
     """Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
 	sumar  y devuelve un nuevo punto o un mensaje de infinito"""
     def suma(self,punto2,a,p):
@@ -55,7 +55,7 @@ class Punto:
     	"""
     """Metodo que imprime un punto"""
     def __str__(self):
-        return "x = " + str( self.x ) + ", y = " + str(self.y)
+        return "(" + str( self.x ) + " , " + str(self.y)+")"
 
 """ Clase curva: modela una curva eliptica """
 class Curva:
@@ -67,10 +67,7 @@ class Curva:
 	
 	""" Metodo que calcula los puntos dentro de la curva"""
 	def calculaPuntosEncurva(self):
-		if self.a == 1:
-			print("Curva: y² = x³ + x +"+str(self.b))
-		else:
-			print("Curva: y² = x³ + "+str(self.a)+"x + "+str(self.b))
+		print(self)
 		print("Puntos")
 		for i in range(0,self.p):
 			x = ((i**3) + (self.a*i) + self.b) % self.p
@@ -80,12 +77,12 @@ class Curva:
 					print("\t("+str(i)+","+str(j)+"),")
 		print("\tO.")
 	""" Metodo que verifica si un punto esta dentro de la curva"""
-	def esta(self, punto, curva):
+	def esta(self, punto):
 		 y = (punto.y ** 2)
-		 resto = (punto.x ** 3) + (curva.a * punto.x) + (curva.b)
-		 if y == (resto % curva.p) :
+		 resto = (punto.x ** 3) + (self.a * punto.x) + (self.b)
+		 if y == (resto % self.p) :
 		 	return True
-		 else : 
+		 else: 
 		 	return False
 	"""Metodo que imprime una Curva"""
 	def __str__ (self):
@@ -95,10 +92,11 @@ class Curva:
 			return "y² = x³ + "+str(self.a)+" x + "+str(self.b)+ " con Z: "+str(self.p) 
 
 
-punto1= Punto(0,1)
-curva = Curva(1,1,35)
+punto1= Punto(2,7)
+curva = Curva(1,6,11)
 curva.calculaPuntosEncurva()
-print("punto 1: "+ str(punto1))
+print("punto 1: \n\t"+ str(punto1))
 print("suma: "+str(punto1.suma(punto1,curva.a,curva.p)))##Esto es q2, y estoy sacando q3
-print("esta: "+ str(punto1)+ " \n en "+str(curva) )
-print(curva.esta(punto1,curva ))
+#print("esta: "+ str(punto1)+ "\ten "+str(curva)+": " + str(curva.esta(punto1)) )
+print("lambda: "+str(punto1.lambd(punto1, curva.a, curva.p)))
+print(punto1.esIgual(punto1))
