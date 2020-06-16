@@ -6,11 +6,11 @@ class Punto:
         self.y=num2
     """Metodo que obtiene el inverso multiplicativo """
     def inversoMultiplicativo(self,a, n):
-	    a%=n; 
+	    a%=n;
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
-	            return i; 
-	    return 1; 
+	            return i;
+	    return 1;
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
     def esIgual(self,punto2):
@@ -48,28 +48,38 @@ class Punto:
             punto3.x=(lambd * lambd)-x1-x2
             punto3.y=lambd*(x1-punto3.x)-y1
             return punto3
-    """Metodo que genera la suma de puntos de manera extendida"""            
+    """Metodo que genera la suma de puntos de manera extendida"""
     def sumaExtendida(self, punto):
     	##la idea es sumar el punto tantas veces hasta que ya no sea posible.
-    	##es decir sacar la suma de forma lineal 
+    	##es decir sacar la suma de forma lineal
     	"""
-    		ejemplo 
+    		ejemplo
     		3P = P + P + P en vez de 2P + P
 
     	"""
+    """Metodo que nos dice si es un resuido cuadratico o no"""
+    def metodCuadratico(self,a,p):
+        cuadrado=(p-1)/2
+        formula= (a**cuadrado)%p
+        if (formula==1):
+            return True
+        else:
+            return False
+
     """Metodo que imprime un punto"""
     def __str__(self):
         return "(" + str( self.x ) + " , " + str(self.y)+")"
 
-""" Clase curva: modela una curva eliptica """
+
+""" Clase curva: modela una curva eliptica
 class Curva:
-	"""Constructor de curvas: Recibe los coeficientes de la ecuación y el campo"""
+
 	def __init__ (self, A, B, campo):
 		self.a = A
 		self.b = B
 		self.p = campo
-	
-	""" Metodo que calcula los puntos dentro de la curva"""
+
+
 	def calculaPuntosEncurva(self):
 		print(self)
 		print("Puntos")
@@ -80,27 +90,27 @@ class Curva:
 				if x==y:
 					print("\t("+str(i)+","+str(j)+"),")
 		print("\tO.")
-	""" Metodo que verifica si un punto esta dentro de la curva"""
 	def esta(self, punto):
 		 y = (punto.y ** 2)
 		 resto = (punto.x ** 3) + (self.a * punto.x) + (self.b)
 		 if y == (resto % self.p) :
 		 	return True
-		 else: 
+		 else:
 		 	return False
-	"""Metodo que imprime una Curva"""
 	def __str__ (self):
 		if (self.a==1):
-			return "y² = x³ + x + "+str(self.b)+ " con Z: "+str(self.p) 
+			return "y² = x³ + x + "+str(self.b)+ " con Z: "+str(self.p)
 		else :
-			return "y² = x³ + "+str(self.a)+" x + "+str(self.b)+ " con Z: "+str(self.p) 
+			return "y² = x³ + "+str(self.a)+" x + "+str(self.b)+ " con Z: "+str(self.p)
 
+"""
+def ecuacion(limite):
+    listaValor=[]
+    valor=0
+    for i in range(limite):
+        valor=(i**3+i+6)%11
+        listaValor.append(valor)
+    return listaValor
 
 punto1= Punto(2,7)
-curva = Curva(1,6,11)
-curva.calculaPuntosEncurva()
-print("punto 1: \n\t"+ str(punto1))
-print("suma: "+str(punto1.suma(punto1,curva.a,curva.p)))##Esto es q2, y estoy sacando q3
-#print("esta: "+ str(punto1)+ "\ten "+str(curva)+": " + str(curva.esta(punto1)) )
-print("lambda: "+str(punto1.lambd(punto1, curva.a, curva.p)))
-print(punto1.esIgual(punto1))
+print(punto1. metodCuadratico(11,13))
