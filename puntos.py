@@ -41,7 +41,8 @@ class Punto:
         x2=punto2.x
         y2=punto2.y
         if( x1==x2 and ((y1*-1)== y2 )):
-            return "infinito"
+            punto3=Punto(-1,-1)
+            return punto3
         else:
             punto3=Punto(0,0)
             lambd=punto1.lambd(punto2,a,p)
@@ -49,15 +50,19 @@ class Punto:
             punto3.y=((lambd*(x1-punto3.x))-y1)%p
             return punto3
     """Metodo que genera la suma de puntos de manera extendida"""
-    def sumaExtendida(self, punto):
+    def sumaExtendida(self,punto,a,p):
     	##la idea es sumar el punto tantas veces hasta que ya no sea posible.
     	##es decir sacar la suma de forma lineal
+        listaPuntos=[]
+        contador=0
+        puntoNuevo=punto
+        while contador <p:
+            puntoNuevo=punto.suma(puntoNuevo,a,p)
+            print(puntoNuevo)
+            listaPuntos.append(puntoNuevo)
+            contador=contador+1
+        return listaPuntos
 
-    	"""
-    		ejemplo
-    		3P = P + P + P en vez de 2P + P
-
-    	"""
     """Metodo que nos dice si es un resuido cuadratico o no"""
     def metodCuadratico(self,a,p):
         cuadrado=(p-1)/2
@@ -113,7 +118,8 @@ def ecuacion(limite):
         listaValor.append(valor)
     return listaValor
 
-punto1= Punto(5,2)
-punto2= Punto(8,3)
-print(punto1. suma(punto1,1,11))
+punto1= Punto(2,7)
+punto2= Punto(2,7)
+punto3=punto1.suma(punto2,1,11)
+print(punto1.sumaExtendida(punto1,1,11))
 ##print(punto1.inversoMultiplicativo(58,493))
