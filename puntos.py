@@ -10,7 +10,7 @@ class Punto:
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
 	            return i; 
-	    return 1; 
+	    return 1
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
     def esIgual(self,punto2):
@@ -60,7 +60,14 @@ class Punto:
     """Metodo que imprime un punto"""
     def __str__(self):
         return "(" + str( self.x ) + " , " + str(self.y)+")"
-
+    """asdas"""
+    def mcd(self,num1,num2):
+	    resta=0
+	    while (num2>0):
+	       	resta=num2
+	       	num2=num1%num2
+	       	num1=resta
+	    return num1
 """ Clase curva: modela una curva eliptica """
 class Curva:
 	"""Constructor de curvas: Recibe los coeficientes de la ecuación y el campo"""
@@ -104,3 +111,5 @@ print("suma: "+str(punto1.suma(punto1,curva.a,curva.p)))##Esto es q2, y estoy sa
 #print("esta: "+ str(punto1)+ "\ten "+str(curva)+": " + str(curva.esta(punto1)) )
 print("lambda: "+str(punto1.lambd(punto1, curva.a, curva.p)))
 print(punto1.esIgual(punto1))
+print(9%11)
+print(punto1.mcd(10,20))
