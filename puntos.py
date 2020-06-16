@@ -118,8 +118,10 @@ def ecuacion(limite):
         listaValor.append(valor)
     return listaValor
 
-punto1= Punto(2,7)
-punto2= Punto(2,7)
+punto1= Punto(7,7)
+punto2= Punto(7,7)
+print(punto1.suma(punto2,2,11))
+print(":V :V:V :V")
 punto3=punto1.suma(punto2,1,11)
 print(punto1.sumaExtendida(punto1,1,11))
 ##print(punto1.inversoMultiplicativo(58,493))
