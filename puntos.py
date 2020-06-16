@@ -114,7 +114,6 @@ print("punto 1: \n\t"+ str(punto1))
 print()
 print("suma extendida")
 lista = punto1.sumaExtendida(punto1,1,11)
-
 for i in range(0,len(lista)):
 	print((lista[i]))
 
