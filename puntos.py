@@ -5,7 +5,7 @@ class Punto:
         self.x=num1
         self.y=num2
     """Metodo que obtiene el inverso multiplicativo """
-    def inversoMultiplicativo(a, n):
+    def inversoMultiplicativo(self,a, n):
 	    a%=n; 
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
@@ -30,11 +30,9 @@ class Punto:
     	y2=punto2.y
     	if(self.esIgual(punto2)):
     		x1=x1*x1
-    		return ((((3*x1) + a) / (2*y1))) % p
+    		return ((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
     	else:
-    		if(x2==x1):
-    			return "Division entre 0"
-    	return ((y2-y1)/(x2-x1))%p
+    		return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p
     """Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
 	sumar  y devuelve un nuevo punto o un mensaje de infinito"""
     def suma(self,punto2,a,p):
