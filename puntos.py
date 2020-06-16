@@ -54,7 +54,7 @@ class Punto:
     	"""
     		ejemplo 
     		3P = P + P + P en vez de 2P + P
-    		
+
     	"""
 	"""Metodo que imprime un punto"""
     def __str__(self):
@@ -90,6 +90,7 @@ class Curva:
 		 	return True
 		 else : 
 		 	return False
+	"""Metodo que imprime una Curva"""
 	def __str__ (self):
 		if (self.a==1):
 			return "y² = x³ + x + "+str(self.b)+ " con Z: "+str(self.p) 
