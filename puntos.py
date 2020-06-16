@@ -102,7 +102,6 @@ punto1= Punto(0,1)
 curva = Curva(1,1,35)
 curva.calculaPuntosEncurva()
 print("punto 1: "+ str(punto1))
-print("punto 2: "+ str(punto2))
 print("suma: "+str(punto1.suma(punto2,20,35)))##Esto es q2, y estoy sacando q3
 print("esta: "+ str(punto1)+ " \n en "+str(curva) )
 print(curva.esta(punto1,curva ))
