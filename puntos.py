@@ -4,7 +4,13 @@ class Punto:
     def __init__(self,num1,num2):
         self.x=num1
         self.y=num2
-
+    """Metodo que obtiene el inverso multiplicativo """
+    def inversoMultiplicativo(a, n):
+	    a%=n; 
+	    for i in range(1,n):
+	        if ((a * i) % n == 1) :
+	            return i; 
+	    return 1; 
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
     def esIgual(self,punto2):
