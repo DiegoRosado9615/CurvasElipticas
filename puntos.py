@@ -118,3 +118,8 @@ for i in range(0,len(lista)):
 	print((lista[i]))
 
 
+print("inversoMultiplicativo :")
+print()
+print(punto1.inversoMultiplicativo(29,31))
+print((26*21)%31 )
+
