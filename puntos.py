@@ -6,10 +6,10 @@ class Punto:
         self.y=num2
     """Metodo que obtiene el inverso multiplicativo """
     def inversoMultiplicativo(self,a, n):
-	    a%=n; 
+	    a%=n;
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
-	            return i; 
+	            return i;
 	    return 1
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
@@ -64,7 +64,8 @@ class Punto:
     """Metodo que imprime un punto"""
     def __str__(self):
         return "(" + str( self.x ) + " , " + str(self.y)+")"
-    """asdas"""
+
+    """Metodo que saca el mcd"""
     def mcd(self,num1,num2):
 	    resta=0
 	    while (num2>0):
@@ -72,6 +73,7 @@ class Punto:
 	       	num2=num1%num2
 	       	num1=resta
 	    return num1
+
 """ Clase curva: modela una curva eliptica """
 class Curva:
 	"""Constructor de curvas: Recibe los coeficientes de la ecuación y el campo"""
@@ -79,7 +81,7 @@ class Curva:
 		self.a = A
 		self.b = B
 		self.p = campo
-	
+
 	""" Metodo que calcula los puntos dentro de la curva"""
 	def calculaPuntosEncurva(self):
 		print(self)
@@ -97,24 +99,25 @@ class Curva:
 		 resto = (punto.x ** 3) + (self.a * punto.x) + (self.b)
 		 if y == (resto % self.p) :
 		 	return True
-		 else: 
+		 else:
 		 	return False
 	"""Metodo que imprime una Curva"""
 	def __str__ (self):
 		if (self.a==1):
-			return "y² = x³ + x + "+str(self.b)+ " con Z: "+str(self.p) 
+			return "y² = x³ + x + "+str(self.b)+ " con Z: "+str(self.p)
 		else :
-			return "y² = x³ + "+str(self.a)+"x + "+str(self.b)+ " con Z: "+str(self.p) 
+			return "y² = x³ + "+str(self.a)+"x + "+str(self.b)+ " con Z: "+str(self.p)
 
 #Haciendo tarea ejercicio 4
-punto1= Punto(28,26)
-curva = Curva(2,7,31)
-curva.calculaPuntosEncurva()
-print("punto 1: \n\t"+ str(punto1))
-print()
-print("suma extendida")
-lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
-for i in range(0,len(lista)):
-	print((lista[i]))
+punto1= Punto(15,-4)
+punto2= Punto(14,22)
+#curva = Curva(3,7,31)
+#curva.calculaPuntosEncurva()
+#print("punto 1: \n\t"+ str(punto1))
+#print()
+#print("suma extendida")
+lista = punto1.suma(punto2,21,35)
 
-
+print(lista)
+#for i in range(0,len(lista)):
+#	print((lista[i]))
