@@ -1,0 +1,161 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Castro Mejia Jonatan Alejandro}
+\title{Tarea 3 \\Criptografía y Seguridad \\ Curvas elípticas}
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item Sea E: $y^{2}+20x= x^{3}+21(mod 35)$ y sea Q =(15,-4) $\in$ E.
+\begin{itemize}
+\item[a)] Factoriza 35 tratando de calcular 3Q.
+\item[b)] Factoriza 35 tratando de calcular 4Q duplicándolo.
+\item[c)] Calcula 3Q y 4Q sobre E (mod 5) y sobre E (mod 7) explica por que el factor 5 se obtiene calculando 3Q y por que el factor 7 se obtiene calculando 4Q.
+
+\end{itemize}
+\item Sea E la curva elíptica $y^{2} =x^{3}+x+28 $ definida sobre $\mathbb{Z}_{71}$
+\begin{itemize}
+\item[a)] Calcula y muestra el número de puntos de E.\\
+Puntos:\\ $O$, (1,32),
+(1,39),
+(2,31),
+(2,40),
+(3,22),
+(3,49),
+(4,5),
+(4,66),
+(5,4),
+(5,67),
+(6,26),
+(6,45),
+(12,8),
+(12,63),
+(13,26),
+(13,45),
+(15,9),
+(15,62),
+(19,27),
+(19,44),
+(20,5),
+(20,66),
+(21,3),
+(21,68),
+(22,30),
+(22,41),
+(23,19),
+(23,52),
+(25,22),
+(25,49),
+(27,0),
+(31,32),
+(31,39),
+(33,1),
+(33,70),
+(34,23),
+(34,48),
+(35,14),
+(35,57),
+(36,12),
+(36,59),
+(37,33),
+(37,38),
+(39,32),
+(39,39),
+(41,7),
+(41,64),
+(43,22),
+(43,49),
+(47,5),
+(47,66),
+(48,11),
+(48,60),
+(49,24),
+(49,47),
+(52,26),
+(52,45),
+(53,0),
+(58,27),
+(58,44),
+(61,15),
+(61,56),
+(62,0),
+(63,17),
+(63,54),
+(65,27),
+(65,44),
+(66,18),
+(66,53),
+(69,35),
+(69,36).
+
+
+\item[b)] Muestra que E no es un grupo cíclico.
+\item[c)] ¿Cuál es el máximo orden de un elemento en E? Encuentra un elemnto que tenga ese orden.
+\end{itemize}
+\item Sea E :$y^{2}-2=x^{3}+333x$ sobre $\mathbb{F}_{347}$ y sea P = (110,136).
+\begin{itemize}
+\item[a)] ¿Es Q=(81,-176) un punto de E?\\
+Para verificar esto hay que sustituir en E: x = 81, y = -176.\\
+(-176$)^{2} = (81)^{2} + 333(81) + 2 $\\
+30976 = 6561 + 26973 + 2. \\
+30976 = 33536 mod 347 \\
+30976 $\neq$ 224 mod 347.\\
+Entonces Q no es un punto de E.
+\item[b)] si sabemos que $|E| = 358$ ¿Podemos decir E es criptográficamente útil?
+¿Cuál es el orden de P? ¿Entre que valores se puede escojer la clave privada?
+\item[c)] si tu clave privada es k=101 y algún conocido te ha enviado el mensaje cifrado (M$_1$=(232,278) y M$_2$=(135,214)) ¿Cuál era el mensaje original?
+\end{itemize}
+\item Sea $\mathbb{E}$ : F(x,y)=$y^{2}-x^{3}-2x-7$ sobre $\mathbb{Z}_{31}$ con $\neq \mathbb{E}$ = 39 y P = (2,9) es un punto de orden 39 sobre $\mathbb{E}$, el ECIES simplifado definido sobre $\mathbb{E}$ tiene $\mathbb{Z}^{*}_{31}$ como espacio de texto plano, supongamos que la clave privada es m = 8.
+\begin{itemize}
+\item[a)] Calcula Q=mP\\
+Hay que calcular Q = 8P\\$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~$= 4P + 4P = (2P+2P) + (2P+2P)
+\\$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~$= ((P + P) + (P + P)) + ((P + P) + (P + P)) (pero esto es obvio)\\
+Como son los mismos puntos tenemos $\lambda$ = (3$x_{1}^{2}$ + A) $(2y_{1})^{-1}$ = $(3(2)^{2} + 2)(2(9))^{-1}$ hay que encontrar el inverso de 9 mod 31 usando el algoritmo extendido de euclides, 2(9)$^{-1}$ $\equiv$ 18$^{-1} \equiv $ 19 mod 31.\\
+Entonces $\lambda$ = (12+2) x 19 = 266.\\
+Queda calcular $x_{3}$ = $\lambda^{2} - x_{1} - x_{2}$, y$_3$ = $\lambda(x_{1} - x_{3}) - y_{1}$.
+\\
+\\x$_{3}$ = $(266)^{2}$ - 2 - 2 = 70,756-4 = 70,752 $\equiv$ 10 mod 31.
+\\y$_{3}$ = 266(2-70752) - 9 = -18,819,509 $\equiv$  2 mod 31.\\
+Entonces 2P = (10,2).\\
+4P = 2P + 2P =  (10,2)+(10,2).\\
+Entonces $\lambda$ = (3(10$^{2}$) + 2)(2(2)$)^{-1}$ = 2,416.\\
+x$_{3}$ = (2,416)$^{2}$ -10 -10 = 5,837,036 $\equiv$ 15 mod 31.\\
+y$_{3}$ = 2,416(10 - 5,837,036) - 2 = -14102254818 $\equiv$ 8 mod 31.\\
+Por lo que 4P = (15,8), solo falta calcular 8P = 4P + 4P = (15,8) + (15,8).\\
+Ahora $\lambda$ = (3(15)$^{2}$ + 2)(2(8)$^{-1}$); 2(8)$^{-1} \equiv $ 2 mod 31. \\
+entonces $\lambda$ = 677 x 2 = 1354.\\
+x$_{3}$ = 1,354$^{2}$ - 15 -15 = 1.833,286 $\equiv$ 8 mod 31.\\
+y$_{3}$ = 1354(15 - 1,833,286 )-8 = -24,82,248,942 $\equiv$ 15 mod 31.\\
+Entonces 8P = (8,15).
+\item[b)] Descifra la siguiente cadena de texto cifrado: \\
+((18,1),21),((3,1),18),((17,0),19),((28,0),8)\\
+E : y$^{2} = x^{3} + 2x + 7$ mod 31
+\begin{itemize}
+\item[1)] ((18,1),21)\\
+Evaluamos 18 en E:\\
+Entonces 18$^{3} +2(18) + 7 = 5875 \equiv $16 mod 31.\\
+y = $\pm$ 4, ahora hay que fijarnos en la segunda entrada la cual nos dice que y $\equiv$ 1 mod 2, entonces y = 27.\\
+El punto de descompresión es (18,27), entonces 8(18,27) = 
+\item[2)] ((3,1),18)\\
+Evaluamos 3 en E :\\
+Entonces 3$^{3} + 2(3) + 7 = 40 \equiv $ 9 mod 31\\
+y = $\pm$ 3, ahora hay que fijarnos en la segunda entrada la cual nos dice que y $\equiv$ 1 mod 2, entonces y = 28
+\item[3)] ((17,0),19)\\
+Evaluamos 17 en E:\\
+Entonces 17$^{3} + 2(17) + 7 = 4954 \equiv$ 25 mod 31\\
+y = $\pm$ 5, ahora hay que fijarnos en la segunda entrada la cual nos dice que y $\equiv$ 0 mod 2, entonces y = 26
+\item[4)] ((28,0),8) \\
+Evaluamos 28 en E:\\
+Entonces 28$^{3} + 2(28) + 7 = 22015 \equiv $5 mod 31
+Hay que sumarle a 5, 31 tantas veces como sea necesario para que nos genere un cuadrado perfecto. En este caso 5 + 31 = 36.\\
+Entonces y = $\pm$ 6, ahora nos fijamos en la segunda entrada la cual nos dice que y $\equiv$ 0 mod 2, entonces  y = 26
+\end{itemize}
+\item[c)] Supongamos que cada texto plano representa un caracter alfabético, convierte el texto plano en una palabra en ingles, usa la asociación (A $\rightarrow$ 1, ... , Z $\rightarrow$ 26) en este caso 0 no es considerado como un texto plano o par ordenado.
+\end{itemize}
+\end{enumerate}
+\end{document}
