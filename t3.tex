@@ -1,13 +1,12 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \author{Castro Mejia Jonatan Alejandro}
-\title{Tarea 3 \\Criptografía y Seguridad \\ Curvas elípticas}
+\title{Tarea 3 \\Criptografìa y Seguridad \\ Curvas elípticas}
 \begin{document}
 \maketitle
 \begin{enumerate}
@@ -113,8 +112,7 @@ Entonces Q no es un punto de E.
 \item Sea $\mathbb{E}$ : F(x,y)=$y^{2}-x^{3}-2x-7$ sobre $\mathbb{Z}_{31}$ con $\neq \mathbb{E}$ = 39 y P = (2,9) es un punto de orden 39 sobre $\mathbb{E}$, el ECIES simplifado definido sobre $\mathbb{E}$ tiene $\mathbb{Z}^{*}_{31}$ como espacio de texto plano, supongamos que la clave privada es m = 8.
 \begin{itemize}
 \item[a)] Calcula Q=mP\\
-Hay que calcular Q = 8P\\$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~$= 4P + 4P = (2P+2P) + (2P+2P)
-\\$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~$= ((P + P) + (P + P)) + ((P + P) + (P + P)) (pero esto es obvio)\\
+Hay que calcular Q = 8P\\$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~$= 4P + 4P = (2P+2P) + (2P+2P)\\\\
 Como son los mismos puntos tenemos $\lambda$ = (3$x_{1}^{2}$ + A) $(2y_{1})^{-1}$ = $(3(2)^{2} + 2)(2(9))^{-1}$ hay que encontrar el inverso de 9 mod 31 usando el algoritmo extendido de euclides, 2(9)$^{-1}$ $\equiv$ 18$^{-1} \equiv $ 19 mod 31.\\
 Entonces $\lambda$ = (12+2) x 19 = 266.\\
 Queda calcular $x_{3}$ = $\lambda^{2} - x_{1} - x_{2}$, y$_3$ = $\lambda(x_{1} - x_{3}) - y_{1}$.
@@ -140,20 +138,24 @@ E : y$^{2} = x^{3} + 2x + 7$ mod 31
 Evaluamos 18 en E:\\
 Entonces 18$^{3} +2(18) + 7 = 5875 \equiv $16 mod 31.\\
 y = $\pm$ 4, ahora hay que fijarnos en la segunda entrada la cual nos dice que y $\equiv$ 1 mod 2, entonces y = 27.\\
-El punto de descompresión es (18,27), entonces 8(18,27) = 
+El punto de descompresión es (18,27), entonces 8(18,27) = (15,8)
 \item[2)] ((3,1),18)\\
 Evaluamos 3 en E :\\
 Entonces 3$^{3} + 2(3) + 7 = 40 \equiv $ 9 mod 31\\
-y = $\pm$ 3, ahora hay que fijarnos en la segunda entrada la cual nos dice que y $\equiv$ 1 mod 2, entonces y = 28
+y = $\pm$ 3, ahora hay que fijarnos en la segunda entrada la cual nos dice que y $\equiv$ 1 mod 2, entonces y = 28 \\ 
+El punto de descompresión es (3,28), entonces 8(3,28) = (2,22)
 \item[3)] ((17,0),19)\\
 Evaluamos 17 en E:\\
 Entonces 17$^{3} + 2(17) + 7 = 4954 \equiv$ 25 mod 31\\
-y = $\pm$ 5, ahora hay que fijarnos en la segunda entrada la cual nos dice que y $\equiv$ 0 mod 2, entonces y = 26
+y = $\pm$ 5, ahora hay que fijarnos en la segunda entrada la cual nos dice que y $\equiv$ 0 mod 2, entonces y = 26\\
+El Punto de descompresión es (17,26) ,entonces 8(17,26) = (29,29)
 \item[4)] ((28,0),8) \\
 Evaluamos 28 en E:\\
 Entonces 28$^{3} + 2(28) + 7 = 22015 \equiv $5 mod 31
 Hay que sumarle a 5, 31 tantas veces como sea necesario para que nos genere un cuadrado perfecto. En este caso 5 + 31 = 36.\\
-Entonces y = $\pm$ 6, ahora nos fijamos en la segunda entrada la cual nos dice que y $\equiv$ 0 mod 2, entonces  y = 26
+Entonces y = $\pm$ 6, ahora nos fijamos en la segunda entrada la cual nos dice que y $\equiv$ 0 mod 2, entonces  y = 26\\
+El punto de descompresión es (28,26), entonces 8(28,26) = (5,10)
+
 \end{itemize}
 \item[c)] Supongamos que cada texto plano representa un caracter alfabético, convierte el texto plano en una palabra en ingles, usa la asociación (A $\rightarrow$ 1, ... , Z $\rightarrow$ 26) en este caso 0 no es considerado como un texto plano o par ordenado.
 \end{itemize}
