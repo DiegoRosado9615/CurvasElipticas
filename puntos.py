@@ -104,16 +104,16 @@ class Curva:
 		if (self.a==1):
 			return "y² = x³ + x + "+str(self.b)+ " con Z: "+str(self.p) 
 		else :
-			return "y² = x³ + "+str(self.a)+" x + "+str(self.b)+ " con Z: "+str(self.p) 
+			return "y² = x³ + "+str(self.a)+"x + "+str(self.b)+ " con Z: "+str(self.p) 
 
-
-punto1= Punto(2,7)
-curva = Curva(1,6,11)
+#Haciendo tarea ejercicio 4
+punto1= Punto(28,26)
+curva = Curva(2,7,31)
 curva.calculaPuntosEncurva()
 print("punto 1: \n\t"+ str(punto1))
 print()
 print("suma extendida")
-lista = punto1.sumaExtendida(punto1,1,11)
+lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
 for i in range(0,len(lista)):
 	print((lista[i]))
 
