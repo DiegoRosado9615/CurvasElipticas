@@ -120,6 +120,6 @@ for i in range(0,len(lista)):
 
 print("inversoMultiplicativo :")
 print()
-print(punto1.inversoMultiplicativo(29,31))
-print((26*21)%31 )
+print(punto1.inversoMultiplicativo(5,31))
+print((25*8)%31 )
 
