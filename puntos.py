@@ -10,7 +10,7 @@ class Punto:
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
 	            return i; 
-	    return 1
+	    return -1
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
     def esIgual(self,punto2):
@@ -30,7 +30,10 @@ class Punto:
     	y2=punto2.y
     	if(self.esIgual(punto2)):
     		x1=x1*x1
-    		return ((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
+    		if (self.inversoMultiplicativo(2*y1,p)==-1):
+    			return "no hay inverso de "+str(2*y1)+" pero el mcd("+str(2*y1)+","+str(p)+") ="+str(self.mcd(2*y1,p))  
+    		else : 
+    			return ((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
     	else:
     		return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p
     """Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
