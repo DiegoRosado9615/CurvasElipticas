@@ -110,13 +110,15 @@ class Curva:
 
 #Haciendo tarea ejercicio 4
 punto1= Punto(15,-4)
-punto2= Punto(14,22)
+punto2= Punto(0,14)
+punto3= Punto(17,21)
+
 #curva = Curva(3,7,31)
 #curva.calculaPuntosEncurva()
 #print("punto 1: \n\t"+ str(punto1))
 #print()
 #print("suma extendida")
-lista = punto1.suma(punto2,21,35)
+lista = punto1.suma(punto1,-20,35)
 
 print(lista)
 #for i in range(0,len(lista)):

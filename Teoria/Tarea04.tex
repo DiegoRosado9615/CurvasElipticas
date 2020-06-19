@@ -17,39 +17,67 @@
 \begin{itemize}
 \item[A] Factoriza 35 tratando de calcular 3Q.\vspace{.3cm}
 
-Para realizar primero sumamos el punto Q 3 veces, para esto usamos un programa en python que nos ayuda a calcular la suma de puntos
+Primero para poder realizar esta operación tenemos que enontrar 2Q, para ello tenemos que sumar los puntos (15,4) + (15,4) Recordando que la suma se define de la siguiente forma\vspace{.3cm}
 
- \begin{lstlisting}
-def suma(self,punto2,a,p):
-        x1=self.x
-        y1=self.y
-        x2=punto2.x
-        y2=punto2.y
-        if( x1==x2 and ((y1*-1)== y2 )):
-            punto3=Punto(-1,-1)
-            return punto3
-        else:
-            punto3=Punto(0,0)
-            lambd=punto1.lambd(punto2,a,p)
-            punto3.x=((lambd * lambd)-x1-x2)%p
-            punto3.y=((lambd*(x1-punto3.x))-y1)%p
-        return punto3
-        
-\end{lstlisting}
-
-al pasar los parámetros punto1=(15,-4), 21 y 35, donde (15,-4) es el punto que nos dieron a=21  y p=35, esto nos devuelve (14,22), pero esto unicamente es el punto 2Q, para solucionarlo sumamos 2Q+punto1 y el resultado es (17,21).\vspace{.3cm}
-
-Una vez tenemos este punto sacamos la $\lambda$=\[
+P+Q=\[
 \begin{cases}
-(3x_1^2+A) *  2(y_1)^{-1}, & \text{si } P=Q ;\\
-(y1-y2)*(x_1 - x_2) & \text{si } P!=Q;\\
+Infinito  & \text{SI }  x_1=x_2 \ \&  -y_1= y_2 ;\\
+(x_3,y_3) &  \text{} x_3= (\lambda -x_1 - x_2)\  mod \ p \  y\  y_3 = (\lambda (x_1-x_3)-x_1)\ mod \ p\\
+
+\end{cases}
+\]  
+Pero para esto necesitamos sacar primero a $\lambda$ que recordemos que se difine de la siguiente manera\vspace{.3cm}
+
+ $\lambda$=\[
+\begin{cases}
+((3x_1^2+A) *  2(y_1)^{-1})) \ mod \ p & \text{si } P=Q ;\\
+((y1-y2)*(x_1 - x_2))\ mod \ p & \text{si } P!=Q;\\
 
 \end{cases}
 \]
-En este caso, para sacar la $\lambda$ estamos nuestra P=(17,21) y Q=(17,21) por lo que tenemos que usar el primer caso, entonces sustituyendo los valores nos queda de la siguiente forma\vspace{.3cm}
 
-$(3(17)^2+20) *  2(21)^{-1}$ $\rightarrow$ $\frac{867+20}{42^{-1}}$   pero, ya tenemos lo que nos interesa que es el denominador pero recordemos que no estamos trabajando con los números reales por lo cual  tenemos que encontrar el inverso de 42 mod 35, pero este número no existe.\vspace{.3cm}
+Para esto entonces simplemente sustituimos los valores, en lambda debido a que P=Q entonces usamos el primer caso de la lamda lo cual nos dice que $\lambda$ =
+$(((3(15)^2)+-20) *  2(-4)^{-1}))mod 35$\\
+$\rightarrow$ (((3*225)-20* (-8)$^{-1}$)mod 35\\
+$\rightarrow$  ((675-20)*13)mod 35\\
+ $\rightarrow$ (655 * 13) mod 35\\
+  $\rightarrow$ 8515 mod 35\\
+   $\therefore$ $\lambda = $  10\vspace{.3cm} 
+   
+ Ahora ya podemos sumar, primero sacaremos $x_3$ = $10^2$-15-15 mod 35 \\
+ $\rightarrow$ 100-30 mod 35\\
+ $\rightarrow$70 mod 35\\
+ $\therefore$ x3=0\vspace{.3cm}
+ 
+ Ahora debemos sacar a $y_3$=(10(15-0)- -4) mod 35 \\
+ $\rightarrow$ 150+4 mod 35\\
+ $\rightarrow$ 154 mod 35\\
+$\therefore$ $y_3$ = 14  
 
-Por lo cual tenemos que sacarle el MCD(42,35) que en este caso es 7 $\therefore$ un factor de 35 es 7
+Entonces ya sabemos el valor del punto 2Q, ahora debemos sumar Q+2q para tener 3Q, para eso debemos calcular de nuevo $\lambda$ por lo que haremos\vspace{.3cm}
+$\lambda$= $\frac{-4-14} {15-0}$\vspace{.3cm}
+
+Aquí encontramos un error debido a que 15 no tiene inverso multiplicativo en el grupo 35 así que eso implica que tenemos que sacar el MCD(35,15) = 5 $\therefore$ 5 es factor de 35.
+
+\item[2] Factoriza 35 tratando de calcular 4Q duplicándolo.
+
+Ahora no calcularemos 2Q debido a que ya lo calculamos anteriormente en el ejercicio 1 por lo cual pasaremos a calcular $\lambda$ bajo la definición del ejercicio 1\vspace{.3cm} 
+
+$\lambda$= $\frac{3(0)^2}{2(14)}$mod 35 \vspace{.3cm}
+
+Encontramos de nuevo el mismo problema que en el ejercicio anterior debido a que 28 mod 35  no tiene inverso, por lo cual debemos sacar su MCD(28,35) = 7 $\therefore$ 7 es un factor de 35 
+
+\item[3] Calcula 3Q y 4Q sobre E (mod 5) y sobre E (mod 7) explica por que el factor 5
+se obtiene calculando 3Q y por que el factor 7 se obtiene calculando 4Q.
+
+Debido a que cuando calculas 3Q , intentamos sacar el inverso de 15 en el grupo 35, esto conflictuá ya que como 15 y 35 no son primos $\rightarrow$ que son números compuesto por primos esto nos lo sabemos por el teorema fundamental de la aritmética , ahora al sacar su MCD descubrimos que 5 es ese número $\therefore$ por esa razón 3 q , nos dio el valor 5 por compartir ese primo con 15 y análogamente pasa lo mismo con 28 y 35 
+
+Ahora el valor de 3 Q con 5 =  No se puede calcular debido a que tenemos que cuando intentamos sumar Q= (15,-4) con 2Q=(0,4)(Los calculos de como se llego a 2q  se dejan como ejercicio para el lector ) e intentamos sacar $\alpha$ = (-4-4).(0-15)$^{-1}$\\
+$\rightarrow$ 8 . (-15)$^{-1}$ y como -15 no esta en el campo de 5 entonces lo que hacemos es devolverlo con la operación modulo $\rightarrow$ -15 mod 5 = 0 y 0 no tiene inverso multiplicativo en 5 y no existe MCD(0,5) por lo que nuestro proceso termina aquí
+  
+
+
+
+
 \end{itemize}
 \end{document}
