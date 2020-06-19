@@ -175,10 +175,30 @@ Puntos:\\ $O$, (1,32),
 \begin{itemize}
 \item[a)] ¿Es Q=(81,-176) un punto de E?\\
 Para verificar esto hay que sustituir en E: x = 81, y = -176.\\
-
+$(-176)^2 -2 \equiv (81)^3 +333(81)$ mod 347\\
+$30976-2 \equiv 531441+26973$ mod 347\\
+$30974 \equiv 558414$ mod 347\\
+P = $347 | 558414 -30974 = 1520$\\
+Como 347 divide a 527440 entonces:\\
+P$=(81,-176) \in E(\mathbb{F}_347)$
 \item[b)] si sabemos que $|E| = 358$ ¿Podemos decir E es criptográficamente útil?
 ¿Cuál es el orden de P? ¿Entre que valores se puede escojer la clave privada?
-\item[c)] si tu clave privada es k=101 y algún conocido te ha enviado el mensaje cifrado (M$_1$=(232,278) y M$_2$=(135,214)) ¿Cuál era el mensaje original?
+
+
+
+
+
+\item[c)] si tu clave privada es k=101 y algún conocido te ha enviado el mensaje cifrado (M$_1$=(232,278) y M$_2$=(135,214)) ¿Cuál era el mensaje original?\\
+$M_1=(232,278)$\\
+$M_2=(135,214)$\\
+k=101\\
+Utilizando la expresión $M=M_2 - kM_1$\\
+$M=(135,214)-101(232,278)$\\
+Pero  -101(232,278) = (275,176)\\
+$=(135,214)-(275,176)$\\
+$=(135,214)+(275,-176)$\\
+$=(74,87)$\\
+$\therefore$ el Mensaje original era (74,87)\\
 \end{itemize}
 \item Sea $\mathbb{E}$ : F(x,y)=$y^{2}-x^{3}-2x-7$ sobre $\mathbb{Z}_{31}$ con $\neq \mathbb{E}$ = 39 y P = (2,9) es un punto de orden 39 sobre $\mathbb{E}$, el ECIES simplifado definido sobre $\mathbb{E}$ tiene $\mathbb{Z}^{*}_{31}$ como espacio de texto plano, supongamos que la clave privada es m = 8.
 \begin{itemize}
