@@ -9,7 +9,7 @@ class Punto:
 	    a%=n;
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
-	            return i;
+	            return i; 
 	    return -1
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
@@ -22,11 +22,21 @@ class Punto:
             return True
         else:
             return False
-
-    def lambd(self, punto2,a,p):
-		print("hola")
-
-	"""Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
+    """Metodo que obtiene el valor de la lambda"""
+    def lambd(self,punto2,a,p):
+    	x1=self.x
+    	y1=self.y
+    	x2=punto2.x
+    	y2=punto2.y
+    	if(self.esIgual(punto2)):
+    		x1=x1*x1
+    		if (self.inversoMultiplicativo(2*y1,p)==-1):
+    			return "no hay inverso de "+str(2*y1)+" pero el mcd("+str(2*y1)+","+str(p)+") ="+str(self.mcd(2*y1,p))  
+    		else : 
+    			return ((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
+    	else:
+    		return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p
+    """Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
 	sumar  y devuelve un nuevo punto o un mensaje de infinito"""
     def suma(self,punto2,a,p):
         x1=self.x
@@ -100,6 +110,10 @@ class Curva:
 			return "y² = x³ + ("+str(self.a)+")x + "+str(self.b)+ " con Z: "+str(self.p)
 
 #Haciendo tarea ejercicio 4
+punto1= Punto (15,-4)
+
+
+print(punto1.lambd(punto1,15,-4))
 """
 punto1= Punto(15,-4)
 curva = Curva(-20,21,35)
