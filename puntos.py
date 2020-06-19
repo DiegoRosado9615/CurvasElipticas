@@ -32,14 +32,13 @@ class Punto:
 
     	if(self.esIgual(punto2)):
     		if(self.inversoMultiplicativo(2*y1,p) == -1):
-    			return "no hay inverso, hay que obtner el mcd("+str(2*y1)+","+str(p)+") = "+str(self.mcd(2*y1, p))
+    			return int("no hay inverso, hay que obtner el mcd("+str(2*y1)+","+str(p)+") = "+str(self.mcd(2*y1, p)))
     		else:
     			return ((((3*x1*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
-    	else:
     		if(self.inversoMultiplicativo(x2-x1,p)==-1):
-    			return "No hay inverso, hay que obtener el mcd("+str(x2-x1)+","+str(p)+") =" + str(self.mcd(x2-x1,p))
+    			return int("No hay inverso, hay que obtener el mcd("+str(x2-x1)+","+str(p)+") =" + str(self.mcd(x2-x1,p)))
     		else:
-    			return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p  
+    			return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p)) % p  
 
     """Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
 	sumar  y devuelve un nuevo punto o un mensaje de infinito"""
