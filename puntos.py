@@ -118,3 +118,4 @@ for i in range(0,len(lista)):
 	print(str(i+1)+"P "+str(lista[i]))
 
 print(punto1.inversoMultiplicativo(-8,35))
+print(-8805531696% 35)
