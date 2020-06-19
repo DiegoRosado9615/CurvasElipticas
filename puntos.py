@@ -6,11 +6,11 @@ class Punto:
         self.y=num2
     """Metodo que obtiene el inverso multiplicativo """
     def inversoMultiplicativo(self,a, n):
-	    a%=n; 
+	    a%=n;
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
-	            return i; 
-	    return 1
+	            return i;
+	    return -1
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
     def esIgual(self,punto2):
@@ -22,18 +22,11 @@ class Punto:
             return True
         else:
             return False
-    """Metodo que obtiene el valor de la lambda"""
-    def lambd(self,punto2,a,p):
-    	x1=self.x
-    	y1=self.y
-    	x2=punto2.x
-    	y2=punto2.y
-    	if(self.esIgual(punto2)):
-    		x1=x1*x1
-    		return ((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
-    	else:
-    		return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p
-    """Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
+
+    def lambd(self, punto2,a,p):
+		print("hola")
+
+	"""Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
 	sumar  y devuelve un nuevo punto o un mensaje de infinito"""
     def suma(self,punto2,a,p):
         x1=self.x
@@ -79,7 +72,7 @@ class Curva:
 		self.a = A
 		self.b = B
 		self.p = campo
-	
+
 	""" Metodo que calcula los puntos dentro de la curva"""
 	def calculaPuntosEncurva(self):
 		print(self)
@@ -97,16 +90,17 @@ class Curva:
 		 resto = (punto.x ** 3) + (self.a * punto.x) + (self.b)
 		 if y == (resto % self.p) :
 		 	return True
-		 else: 
+		 else:
 		 	return False
 	"""Metodo que imprime una Curva"""
 	def __str__ (self):
 		if (self.a==1):
-			return "y² = x³ + x + "+str(self.b)+ " con Z: "+str(self.p) 
+			return "y² = x³ + x + "+str(self.b)+ " con Z: "+str(self.p)
 		else :
-			return "y² = x³ + ("+str(self.a)+")x + "+str(self.b)+ " con Z: "+str(self.p) 
+			return "y² = x³ + ("+str(self.a)+")x + "+str(self.b)+ " con Z: "+str(self.p)
 
 #Haciendo tarea ejercicio 4
+"""
 punto1= Punto(15,-4)
 curva = Curva(-20,21,35)
 curva.calculaPuntosEncurva()
@@ -122,3 +116,4 @@ print(-8805531696% 35)
 
 print()
 print(punto1.inversoMultiplicativo(15,35))
+"""
