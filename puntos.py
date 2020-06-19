@@ -119,3 +119,6 @@ for i in range(0,len(lista)):
 
 print(punto1.inversoMultiplicativo(-8,35))
 print(-8805531696% 35)
+
+print()
+print(punto1.inversoMultiplicativo(15,35))
