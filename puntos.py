@@ -10,7 +10,7 @@ class Punto:
 	    for i in range(1,n):
 	        if ((a * i) % n == 1) :
 	            return i; 
-	    return 1
+	    return -1
     """Metodo que nos dice si 2 puntos son iguales o no
 	devuelve true si son iguales y false en otro caso """
     def esIgual(self,punto2):
@@ -28,11 +28,19 @@ class Punto:
     	y1=self.y
     	x2=punto2.x
     	y2=punto2.y
+    	##print("inverso 1"+str(self.inversoMultiplicativo(2*y1,p))+"\n inverso 2 "+str(self.inversoMultiplicativo(x2-x1,p)))
+
     	if(self.esIgual(punto2)):
-    		x1=x1*x1
-    		return ((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
+    		if(self.inversoMultiplicativo(2*y1,p) == -1):
+    			return "no hay inverso, hay que obtner el mcd("+str(2*y1)+","+str(p)+") = "+str(self.mcd(2*y1, p))
+    		else:
+    			return ((((3*x1*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
     	else:
-    		return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p
+    		if(self.inversoMultiplicativo(x2-x1,p)==-1):
+    			return "No hay inverso, hay que obtener el mcd("+str(x2-x1)+","+str(p)+") =" + str(self.mcd(x2-x1,p))
+    		else:
+    			return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p  
+
     """Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
 	sumar  y devuelve un nuevo punto o un mensaje de infinito"""
     def suma(self,punto2,a,p):
@@ -106,16 +114,14 @@ class Curva:
 		else :
 			return "y² = x³ + ("+str(self.a)+")x + "+str(self.b)+ " con Z: "+str(self.p) 
 
-#Haciendo tarea ejercicio 4
-punto1= Punto(15,-4)
-curva = Curva(-20,21,35)
-curva.calculaPuntosEncurva()
-print("punto 1: \n\t"+ str(punto1))
-print()
-print("suma extendida")
-lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
-for i in range(0,len(lista)):
-	print(str(i+1)+"P "+str(lista[i]))
+punto1= Punto(15,-4) 
+print(punto1.lambd(punto1,-20,35))  
+punto2 = Punto(0,14)
+print(punto2.lambd(punto2,-20,35)) 
 
-print(punto1.inversoMultiplicativo(-8,35))
-print(-8805531696% 35)
+print(punto1.suma(punto2,-20,35))
+
+
+
+ 
+
