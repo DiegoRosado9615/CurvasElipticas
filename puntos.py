@@ -71,18 +71,6 @@ class Punto:
 			listaFinal.append(punto3)
 			listaFinal.append(False)
 			return listaFinal
-	"""Metodo que genera la suma de puntos de manera extendida"""
-	def sumaExtendida(self,punto,a,p):
-		listaPuntos = []
-		return listaFinal
-		contador = 0
-		puntoNuevo = punto
-		listaPuntos.append(punto)
-		while contador < p:
-			puntoNuevo=punto.suma(puntoNuevo,a,p)
-			listaPuntos.append(puntoNuevo)
-			contador = contador + 1
-		return listaPuntos
 
 	def creadorPuntos(self,x,y):
 		puntoNuevo=Punto(x,y)
@@ -100,8 +88,14 @@ class Punto:
 			puntoNuevo=informacion[0]
 			contador=contador+1
 			pass
-
 		return puntoNuevo
+	def factorial(self,puntoInical,a,p,contador):
+		print(puntoInical)
+		puntoInical=puntoInical.sumaRepetida(contador,a,p)
+		contador=contador+1
+		if( type(puntoInical) is int ) :
+			return puntoInical
+		return puntoInical.factorial(puntoInical,a,p,contador)
 
 	"""Metodo que imprime un punto"""
 	def __str__(self):
@@ -162,11 +156,12 @@ punto6=Punto(113,87)#Q+Q+Q
 ##Puntos de 1081
 punto7= Punto (811,134) #2P
 punto8= Punto(59,430)#2p+2p
-y=punto4.sumaRepetida(3,1,493)
+y=punto2.sumaRepetida(1,1,493)
 print(y)
 ##Prubas con primo 713
 puntoPrueba= Punto (535,88)#2Q
 puntoPrueba2= Punto(329,609)#3Q
 puntoPrueba3= Punto(519,697)#4Q
-x=puntoPrueba3.sumaRepetida(4,1,713)
+#x=puntoPrueba3.sumaRepetida(4,1,713)
+x=punto1.factorial(punto1,1,397391,1)
 print(x)
