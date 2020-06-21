@@ -144,24 +144,16 @@ class Curva:
 		else :
 			return "y² = x³ + "+str(self.a)+"x + "+str(self.b)+ " con Z: "+str(self.p)
 
-#Haciendo tarea ejercicio 4
+#Pactica
+##El metodo Factorial que factoriza los 2 numeros
+#En su tercer parametro, es donde se le debe pasar un numero n
+#Donde n es un numero compuesto por p y q donde p y q son diferentes y
+#Ambos son primos
+#Utilizamos abritatiame la curva y^2 = x^3+x+1
+#Para empezar siempre Utilizamos el puton 0,1 albritario que esta
+#En la curva x^3+x+1
+#Como para que funcione el algorimo solo debemos pasar cuanto vale
+#El coeficiente de X^1 solamente le pasamos el uno
 punto1=Punto(0,1)
-punto2= Punto(370,307)#2p
-punto3= Punto(77,182) ##2p+2p
-punto4= Punto (316,29) ##(2p+2p+2p)<- Q
-punto5= Punto(209,116) ##Q+Q
-punto6=Punto(113,87)#Q+Q+Q
-#Si sumas el punto 4 cocn el punto 6 te va a dar el factor primo de 493
-#punto7=Punto
-##Puntos de 1081
-punto7= Punto (811,134) #2P
-punto8= Punto(59,430)#2p+2p
-y=punto2.sumaRepetida(1,1,493)
-print(y)
-##Prubas con primo 713
-puntoPrueba= Punto (535,88)#2Q
-puntoPrueba2= Punto(329,609)#3Q
-puntoPrueba3= Punto(519,697)#4Q
-#x=puntoPrueba3.sumaRepetida(4,1,713)
-x=punto1.factorial(punto1,1,397391,1)
+x=punto1.factorial(punto1,1,493,1)
 print(x)
