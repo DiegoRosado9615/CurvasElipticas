@@ -123,4 +123,6 @@ curva.calculaPuntosEncurva()
 #lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
 #for i in range(0,len(lista)):
 	#print(str(i+1)+"P "+str(lista[i]))
+print(punto1.mcd(-15,35))
+print(-15 % 5)
 
