@@ -32,7 +32,7 @@ class Punto:
     	if(self.esIgual(punto2)):
     		x1=x1*x1
     		if (self.inversoMultiplicativo(2*y1,p)==-1):
-    			return "no hay inverso de "+str(2*y1)+" pero el mcd("+str(2*y1)+","+str(p)+") ="+str(self.mcd(2*y1,p))  
+    			return "no hay inverso de "+str(2*y1)+" pero el mcd("+str(2*y1)+","+str(p)+") ="+str(self.mcd(2*y1,p)) 
     		else : 
     			return ((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
     	else:
@@ -63,7 +63,10 @@ class Punto:
     	puntoNuevo = punto
     	listaPuntos.append(punto)
     	while contador < p:
-    		puntoNuevo=punto.suma(puntoNuevo,a,p)
+    		try:
+    			puntoNuevo=punto.suma(puntoNuevo,a,p)
+    		except Exception as e:
+    			raise e
     		listaPuntos.append(puntoNuevo)
     		contador = contador + 1
     	return listaPuntos
@@ -114,15 +117,18 @@ class Curva:
 			return "y² = x³ + ("+str(self.a)+")x + "+str(self.b)+ " con Z: "+str(self.p) 
 
 #Haciendo tarea ejercicio 4
-punto1= Punto(15,-4)
-curva = Curva(333,2,347)
+punto1= Punto(17,26)
+curva = Curva(2,7,31)
 curva.calculaPuntosEncurva()
-##print("punto 1: \n\t"+ str(punto1))
-#print()
-#print("suma extendida")
-#lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
-#for i in range(0,len(lista)):
-	#print(str(i+1)+"P "+str(lista[i]))
-print(punto1.mcd(-15,35))
-print(-15 % 5)
+print("punto 1: \n\t"+ str(punto1))
+print()
+print("suma extendida")
+lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
+for i in range(0,len(lista)):
+	print(str(i+1)+"P "+str(lista[i]))
 
+print(punto1.inversoMultiplicativo(30,31))
+print((30*19)%31)
+print(punto1.suma(punto1,curva.a,curva.p))
+print()
+print(200 % 31)
