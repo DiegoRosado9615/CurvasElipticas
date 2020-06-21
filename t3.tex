@@ -113,12 +113,12 @@ Puntos:\\ $O$, (1,32),
 \item Sea E :$y^{2}-2=x^{3}+333x$ sobre $\mathbb{F}_{347}$ y sea P = (110,136).
 \begin{itemize}
 \item[a)] ¿Es Q=(81,-176) un punto de E?\\
-Para verificar esto hay que sustituir en E: x = 81, y = -176.\\
-(-176$)^{2} = (81)^{2} + 333(81) + 2 $\\
-30976 = 6561 + 26973 + 2. \\
-30976 = 33536 mod 347 \\
-30976 $\neq$ 224 mod 347.\\
-Entonces Q no es un punto de E.
+Para verificar esto hay que sustituir en E Q, \\
+(-176$)^{2} - 2= (81)^{3} + 333(81) $\\
+30976 - 2 = 531441 + 26973. \\
+30974 = 558414 mod 347 \\
+Entonces 347$|$558414 - 30974 = 1520, P $\in F_{347}$
+
 \item[b)] si sabemos que $|E| = 358$ ¿Podemos decir E es criptográficamente útil?
 ¿Cuál es el orden de P? ¿Entre que valores se puede escojer la clave privada?
 \item[c)] si tu clave privada es k=101 y algún conocido te ha enviado el mensaje cifrado (M$_1$=(232,278) y M$_2$=(135,214)) ¿Cuál era el mensaje original?

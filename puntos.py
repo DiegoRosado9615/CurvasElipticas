@@ -115,12 +115,12 @@ class Curva:
 
 #Haciendo tarea ejercicio 4
 punto1= Punto(15,-4)
-curva = Curva(-20,21,35)
+curva = Curva(333,2,347)
 curva.calculaPuntosEncurva()
-print("punto 1: \n\t"+ str(punto1))
-print()
-print("suma extendida")
-lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
-for i in range(0,len(lista)):
-	print(str(i+1)+"P "+str(lista[i]))
+##print("punto 1: \n\t"+ str(punto1))
+#print()
+#print("suma extendida")
+#lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
+#for i in range(0,len(lista)):
+	#print(str(i+1)+"P "+str(lista[i]))
 
