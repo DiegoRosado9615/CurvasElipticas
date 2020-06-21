@@ -41,7 +41,7 @@ Primero para poder realizar esta operación tenemos que enontrar 2Q, para ello t
 P+Q=\[
 \begin{cases}
 Infinito  & \text{SI }  x_1=x_2 \ \&  -y_1= y_2 ;\\
-(x_3,y_3) &  \text{} x_3= (\lambda -x_1 - x_2)\  mod \ p \  y\  y_3 = (\lambda (x_1-x_3)-x_1)\ mod \ p\\
+(x_3,y_3) &  \text{} x_3= (\lambda^2 -x_1 - x_2)\  mod \ p \  y\  y_3 = (\lambda (x_1-x_3)-x_1)\ mod \ p\\
 \end{cases}
 \]  
 Pero para esto necesitamos sacar primero a $\lambda$ que recordemos que se difine de la siguiente manera\vspace{.3cm}
@@ -90,8 +90,13 @@ se obtiene calculando 3Q y por que el factor 7 se obtiene calculando 4Q.
 Debido a que cuando calculas 3Q , intentamos sacar el inverso de 15 en el grupo 35, esto conflictuá ya que como 15 y 35 no son primos $\rightarrow$ que son números compuesto por primos esto nos lo sabemos por el teorema fundamental de la aritmética , ahora al sacar su MCD descubrimos que 5 es ese número $\therefore$ por esa razón 3 q , nos dio el valor 5 por compartir ese primo con 15 y análogamente pasa lo mismo con 28 y 35 
 
 Ahora el valor de 3 Q con 5 =  No se puede calcular debido a que tenemos que cuando intentamos sumar Q= (15,-4) con 2Q=(0,4)(Los calculos de como se llego a 2q  se dejan como ejercicio para el lector ) e intentamos sacar $\alpha$ = (-4-4).(0-15)$^{-1}$\\
-$\rightarrow$ 8 . (-15)$^{-1}$ y como -15 no esta en el campo de 5 entonces lo que hacemos es devolverlo con la operación modulo $\rightarrow$ -15 mod 5 = 0 y 0 no tiene inverso multiplicativo en 5 y no existe MCD(0,5) por lo que nuestro proceso termina aquí
+$\rightarrow$ 8 . (-15)$^{-1}$ y como -15 no esta en el campo de 5 entonces lo que hacemos es devolverlo con la operación modulo $\rightarrow$ -15 mod 5 = 0 y 0 no tiene inverso multiplicativo en 5  por lo que nuestro proceso termina aquí.\vspace{.3cm}
 
+Ahora sacaremos el punto 4 Q sumando 2Q + 2Q lo sacamos la $\lambda$=3, haciendo los cálculos llegamos a que $x_3 =0 \land y_3= 4$ $\therefore$ Q3 = (0,4)\vspace{.3cm}
+
+Nos falta sacar los valores de 3Q y 4Q en el modulo 7 por lo que tenemos que calcular 2Q al igual que tratamos al modulo 5 los calculos se dejaran al lector, entonces llegamos a 2Q=(0,0) por lo que ahora   pasamos a sumar Q=(15,-4) + 2Q=(0,0)  llegamos a que $\lambda$ = 4  por lo que $x_3$=1 y $y_3$ = 5, $\therefore$ $Q_3$ = (1,5) \vspace{.3cm}
+
+Para finalizar solo nos falta calcular a 4Q por lo que tenemos que sumar 2Q + 2Q, pero esta no se puede debido a que cuando queremos calcular la $\lambda$ llegamos a los siguiente = (3(0)$^2$-20 * $(2*0)^{-1}$ ) y ya que no podemos sacar el inverso de 0 mod 7 debido a que no existe  \vspace{.3cm}    
 \end{itemize}
 \item Sea E la curva elíptica $y^{2} =x^{3}+x+28 $ definida sobre $\mathbb{Z}_{71}$
 \begin{itemize}
