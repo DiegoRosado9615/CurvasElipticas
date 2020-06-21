@@ -32,16 +32,21 @@ class Punto:
 		valorFinal=[]
 		if( self.esIgual(punto2)):
 			if(self.inversoMultiplicativo(2*y1,p)==-1):
-				valorFinal.append(self.mcd)
+				valorFinal.append(self.mcd((2*y1%p),p))
 				valorFinal.append(True)
-				return self.mcd((2*y1%p),p)
+				return valorFinal
 			x1=x1*x1
-			return ((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p
+			valorFinal.append(((((3*x1) + a)*self.inversoMultiplicativo(2*y1,p))) % p)
+			valorFinal.append(False)
+			return valorFinal
 		else:
 			if((self.inversoMultiplicativo(x2-x1, p) ==-1)):
-				print("AQui")
-				return self.mcd((x2-x1%p),p)
-			return ((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p
+				valorFinal.append(self.mcd((x2-x1%p),p))
+				valorFinal.append(True)
+				return valorFinal
+			valorFinal.append(((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p)
+			valorFinal.append(False)
+			return valorFinal
 	"""Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
 	sumar  y devuelve un nuevo punto o un mensaje de infinito"""
 	def suma(self,punto2,a,p):
@@ -49,19 +54,27 @@ class Punto:
 		y1=self.y
 		x2=punto2.x
 		y2=punto2.y
+		listaFinal=[]
 		if( x1==x2 and ((y1*-1)== y2 )):
 			punto3=Punto(-1,-1)
 			return punto3
 		else:
 			punto3=Punto(0,0)
 			lambd=self.lambd(punto2,a,p)
-			print(lambd)
-			punto3.x=((lambd * lambd)-x1-x2)%p
-			punto3.y=((lambd*(x1-punto3.x))-y1)%p
-			return punto3
+			lambd2=lambd[0]
+			if lambd[1]==True:
+				listaFinal.append(lambd2)
+				listaFinal.append(True)
+				return listaFinal
+			punto3.x=((lambd2 * lambd2)-x1-x2)%p
+			punto3.y=((lambd2*(x1-punto3.x))-y1)%p
+			listaFinal.append(punto3)
+			listaFinal.append(False)
+			return listaFinal
 	"""Metodo que genera la suma de puntos de manera extendida"""
 	def sumaExtendida(self,punto,a,p):
 		listaPuntos = []
+		return listaFinal
 		contador = 0
 		puntoNuevo = punto
 		listaPuntos.append(punto)
@@ -78,10 +91,16 @@ class Punto:
 	def sumaRepetida(self,numVeces,a,p):
 		contador=0
 		puntoNuevo=self.creadorPuntos(self.x,self.y)
+		informacion=[]
 		while (contador<numVeces) :
-			puntoNuevo= self.suma(puntoNuevo,a,p)
+			informacion=self.suma(puntoNuevo,a,p)
+			if informacion[1]==True:
+				print("Un Factor de este numero es")
+				return informacion[0]
+			puntoNuevo=informacion[0]
 			contador=contador+1
 			pass
+
 		return puntoNuevo
 
 	"""Metodo que imprime un punto"""
@@ -143,29 +162,11 @@ punto6=Punto(113,87)#Q+Q+Q
 ##Puntos de 1081
 punto7= Punto (811,134) #2P
 punto8= Punto(59,430)#2p+2p
-
-
-##Prueba con 5
-prueba=Punto(3856,3212)#"Q"
-prueba2=Punto(1408,637)
-prueba3=Punto(503,4156)
+y=punto4.sumaRepetida(3,1,493)
+print(y)
 ##Prubas con primo 713
 puntoPrueba= Punto (535,88)#2Q
 puntoPrueba2= Punto(329,609)#3Q
 puntoPrueba3= Punto(519,697)#4Q
 x=puntoPrueba3.sumaRepetida(4,1,713)
 print(x)
-#print(punto7.suma(punto8,1,1081))
-#print(punto3.suma(punto2,1,493))
-#print(punto2.suma(punto2,1,493))
-#print(punto2.suma(punto3,1,493))
-#print(punto2.suma(punto3,1,493))
-#curva = Curva(3,7,31)
-#curva.calculaPuntosEncurva()
-#print("punto 1: \n\t"+ str(punto1))
-#print()
-#print("suma extendida")
-#print(punto2.lambd(punto2,-20,35))
-#for i in range(0,len(lista)):
-#print((lista[i]))
-#4913+34+7
