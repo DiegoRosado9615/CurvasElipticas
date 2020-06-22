@@ -5,7 +5,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Castro Mejia Jonatan Alejandro}
+\author{Castro Mejia Jonatan Alejandro \\ 314027687}
 \title{Tarea 3 \\Criptografía y Seguridad \\ Curvas elípticas}
 \begin{document}
 \maketitle
@@ -42,13 +42,18 @@ Ahora hay que calcular x$_{3} = \lambda ^{2}- x_{1}- x_{2}$ y y$_{3} = \lambda(x
 \\Entonces 2Q = (0,4).
 \\Ahora ya podemos obtener 3Q,y para eso hay que sumar (15,-4) y (0,4).
 \\Como son diferentes entonces $\lambda = (y_{2} - y_{1})(x_{2} - x_{1})^{-1}$
-\\$\lambda$ = (4 + 4)(15 - 0)$^{-1}$ = 8(15)$^{-1}$ (15$^{-1} \equiv$ 0 mod 5) entonces esto nos indica que hay que sacar el \textbf{mcd(15,35) = 5.} y este es un factor de factorización. Y es por eso que el factor 5 se obtiene calculando 3Q.
+\\$\lambda$ = (4 + 4)(15 - 0)$^{-1}$ = 8(15)$^{-1}$ (15$^{-1} \equiv$ 0 mod 5) 
+\\15 no tiene inverso en 5 multiplicativo entonces terminamos aquí.
 \item[•] Calculando 4Q mod 5
 \\Ya tenemos 2Q para obtener 4Q hay que sumar 2Q + 2Q 
 \\Como son iguales 
 \\$\lambda$ = (3x$_{1}^{2}$ + a)(2$y_{1})^{-1}$
 \\$\lambda$ = (3(0) -20)(2(4))$^{-1}$
-\\$\lambda$ = (-20)(8)$^{-1}$
+\\$\lambda$ = (-20)(8)$^{-1}$ ($8^{-1} \equiv$ 3 mod 5)
+\\$\lambda$ = (-20)(3) = -60
+\\$x_{3}$ = (-$60)^{2}$ - 0 - 0 = 3600 $\equiv$ 0 mod 5
+\\$y_{3}$ = -60(0-3600)-4 = 215996 $\equiv$ 1 mod 5
+\\
 \end{itemize}
 \end{itemize}
 \item Sea E la curva elíptica $y^{2} =x^{3}+x+28 $ definida sobre $\mathbb{Z}_{71}$
@@ -133,14 +138,15 @@ Puntos:\\ $O$, (1,32),
 \item Sea E :$y^{2}-2=x^{3}+333x$ sobre $\mathbb{F}_{347}$ y sea P = (110,136).
 \begin{itemize}
 \item[a)] ¿Es Q=(81,-176) un punto de E?\\
-Para verificar esto hay que sustituir en E Q, \\
+\\Para verificar esto hay que sustituir en E Q, \\
 (-176$)^{2} - 2= (81)^{3} + 333(81) $\\
 30976 - 2 = 531441 + 26973. \\
 30974 = 558414 mod 347 \\
 Entonces 347$|$558414 - 30974 = 1520, P $\in F_{347}$
-
+\\
 \item[b)] si sabemos que $|E| = 358$ ¿Podemos decir E es criptográficamente útil?
 ¿Cuál es el orden de P? ¿Entre que valores se puede escojer la clave privada?
+\\\\El orden de P = 179. E no es criptográficamente útil, ya que no es capaz de dividir a un número primo grande, este número se determina por 172*2, siendo 2 nuestro primo.\\
 \item[c)] si tu clave privada es k=101 y algún conocido te ha enviado el mensaje cifrado (M$_1$=(232,278) y M$_2$=(135,214)) ¿Cuál era el mensaje original?\\
 $M=M_2 - kM_1$\\
 $M=(135,214)-101(232,278)$\\

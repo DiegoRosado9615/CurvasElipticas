@@ -127,8 +127,5 @@ lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
 for i in range(0,len(lista)):
 	print(str(i+1)+"P "+str(lista[i]))
 
-print(punto1.inversoMultiplicativo(30,31))
-print((30*19)%31)
-print(punto1.suma(punto1,curva.a,curva.p))
-print()
-print(200 % 31)
+print(punto1.inversoMultiplicativo(-8,5))
+print(215996 % 5)
