@@ -23,7 +23,11 @@ class Punto:
 			return True
 		else:
 			return False
-	"""Metodo que obtiene el valor de la lambda"""
+	"""Metodo que obtiene el valor de la lambda
+	Devuelve una lista en la posición cero se encuentran los valores que si tuvi
+	eron un inverso y en la posicion uno un false, mientras los valores que no
+	tuvieron inverso  tienen en la posicion uno un true
+	"""
 	def lambd(self,punto2,a,p):
 		x1=self.x
 		y1=self.y
@@ -89,6 +93,7 @@ class Punto:
 			contador=contador+1
 			pass
 		return puntoNuevo
+
 	def factorial(self,puntoInical,a,p,contador):
 		print(puntoInical)
 		puntoInical=puntoInical.sumaRepetida(contador,a,p)
@@ -155,5 +160,10 @@ class Curva:
 #Como para que funcione el algorimo solo debemos pasar cuanto vale
 #El coeficiente de X^1 solamente le pasamos el uno
 punto1=Punto(0,1)
-x=punto1.factorial(punto1,1,493,1)
+primo=input("Introduce un numero: ")
+primo=int(primo)
+x=punto1.factorial(punto1,1,primo,1)
 print(x)
+z=int (primo/x)
+print ("Y el otro factor es ")
+print(z)
