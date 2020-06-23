@@ -122,11 +122,10 @@ curva.calculaPuntosEncurva()
 print("punto 1: \n\t"+ str(punto1))
 print()
 print("suma extendida")
-#lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
-#for i in range(0,len(lista)):
-#	print(str(i+1)+"P "+str(lista[i]))
-#print(punto1.suma(punto1,curva.a,curva.p))
-#print(punto1.inversoMultiplicativo(8,5))
+lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
+for i in range(0,len(lista)):
+	print(str(i+1)+"P "+str(lista[i]))
 print(punto1.suma(punto1,curva.a,curva.p))
-print(punto1.inversoMultiplicativo(0, 7))
+print(punto1.inversoMultiplicativo(8,5))
+
 
