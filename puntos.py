@@ -76,6 +76,28 @@ class Punto:
 			listaFinal.append(False)
 			return listaFinal
 
+
+	def suma2(self,punto2,a,p):
+		x1=self.x
+		y1=self.y
+		x2=punto2.x
+		y2=punto2.y
+		listaFinal=[]
+		if( x1==x2 and ((y1*-1)== y2 )):
+			punto3=Punto(-1,-1)
+			return punto3
+		if(x1==x2 and y1!=y2 ):
+			print("Hola")
+			punto3=Punto (-1,-1)
+			return punto3
+		else:
+			punto3=Punto(0,0)
+			lambd=self.lambd(punto2,a,p)
+			lambd2=lambd[0]
+			punto3.x=((lambd2 * lambd2)-x1-x2)%p
+			punto3.y=((lambd2*(x1-punto3.x))-y1)%p
+			return punto3
+
 	def creadorPuntos(self,x,y):
 		puntoNuevo=Punto(x,y)
 		return puntoNuevo
@@ -101,6 +123,22 @@ class Punto:
 		if( type(puntoInical) is int ) :
 			return puntoInical
 		return puntoInical.factorial(puntoInical,a,p,contador)
+	"""Metodo que saca el orden de un punto"""
+	def calculaOrden(self,punto,a,p):
+		puntoNuevo=Punto(self.x,self.y)
+		puntoInfinito=Punto(-1,-1)
+		orden=1
+		iteraciones=0
+		while(p>iteraciones):
+			if(puntoNuevo.esIgual(puntoInfinito) ):
+
+				break
+			orden=orden+1
+			iteraciones=iteraciones+1
+			puntoNuevo=puntoNuevo.suma2(self,a,p)
+			print(puntoNuevo)
+		return orden
+
 
 	"""Metodo que imprime un punto"""
 	def __str__(self):
@@ -115,6 +153,8 @@ class Punto:
 			num1=resta
 		return num1
 
+
+
 """ Clase curva: modela una curva eliptica """
 class Curva:
 	"""Constructor de curvas: Recibe los coeficientes de la ecuación y el campo"""
@@ -127,13 +167,18 @@ class Curva:
 	def calculaPuntosEncurva(self):
 		print(self)
 		print("Puntos")
+		listaPuntos= []
 		for i in range(0,self.p):
 			x = ((i**3) + (self.a*i) + self.b) % self.p
 			for j in range(0,self.p):
 				y = (j**2) % self.p
 				if x==y:
+					punto="\t("+str(i)+","+str(j)+"),"
 					print("\t("+str(i)+","+str(j)+"),")
+					listaPuntos.append(punto)
+		return listaPuntos
 		print("\tO.")
+
 	""" Metodo que verifica si un punto esta dentro de la curva"""
 	def esta(self, punto):
 		 y = (punto.y ** 2)

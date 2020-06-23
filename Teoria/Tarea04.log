@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.2.14)  20 JUN 2020 12:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.2.14)  23 JUN 2020 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -582,31 +582,47 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Tarea04.aux
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+<Ejemplo1.png, id=18, 755.82375pt x 298.11375pt>
+File: Ejemplo1.png Graphic file (type png)
+<use Ejemplo1.png>
+Package pdftex.def Info: Ejemplo1.png  used on input line 98.
+(pdftex.def)             Requested size: 241.49895pt x 95.25278pt.
+<Ejemplo2.png, id=20, 478.78876pt x 326.21875pt>
+File: Ejemplo2.png Graphic file (type png)
+<use Ejemplo2.png>
+Package pdftex.def Info: Ejemplo2.png  used on input line 119.
+(pdftex.def)             Requested size: 241.49895pt x 164.54254pt.
+ [3 <./Ejemplo1.png>] [4 <./Ejemplo2.png>] (./Tarea04.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-) ) 
+)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4851 strings out of 492982
- 63564 string characters out of 6134896
- 135431 words of memory out of 5000000
- 8355 multiletter control sequences out of 15000+600000
+ 4863 strings out of 492982
+ 63746 string characters out of 6134896
+ 135439 words of memory out of 5000000
+ 8364 multiletter control sequences out of 15000+600000
  6549 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,32p,457b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msam10.pfb>
-Output written on Tarea04.pdf (2 pages, 91681 bytes).
+ 41i,9n,32p,869b,359s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msam10.pfb>
+Output written on Tarea04.pdf (4 pages, 155104 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

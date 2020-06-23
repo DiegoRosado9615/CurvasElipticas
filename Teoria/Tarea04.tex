@@ -77,14 +77,51 @@ $\rightarrow$ 8 . (-15)$^{-1}$ y como -15 no esta en el campo de 5 entonces lo q
 
 Ahora sacaremos el punto 4 Q sumando 2Q + 2Q lo sacamos la $\lambda$=3, haciendo los cálculos llegamos a que $x_3 =0 \land y_3= 4$ $\therefore$ Q3 = (0,4)\vspace{.3cm}
 
-Nos falta sacar los valores de 3Q y 4Q en el modulo 7 por lo que tenemos que calcular 2Q al igual que tratamos al modulo 5 los calculos se dejaran al lector, entonces llegamos a 2Q=(0,0) por lo que ahora   pasamos a sumar Q=(15,-4) + 2Q=(0,0)  llegamos a que $\lambda$ = 4  por lo que $x_3$=1 y $y_3$ = 5, $\therefore$ $Q_3$ = (1,5) \vspace{.3cm}
+Nos falta sacar los valores de 3Q y 4Q en el modulo 7 por lo que tenemos que calcular 2Q al igual que tratamos al modulo 5 los calculos se dejaran al lector, entonces llegamos a 2Q=(0,0) por lo que ahora   pasamos a sumar Q=(15,-4) + 2Q=(0,0)  llegamos a que $\lambda$ = 3  por lo que $x_3$=1 y $y_3$ = 4, $\therefore$ $Q_3$ = (1,4) \vspace{.3cm}
 
 Para finalizar solo nos falta calcular a 4Q por lo que tenemos que sumar 2Q + 2Q, pero esta no se puede debido a que cuando queremos calcular la $\lambda$ llegamos a los siguiente = (3(0)$^2$-20 * $(2*0)^{-1}$ ) y ya que no podemos sacar el inverso de 0 mod 7 debido a que no existe  \vspace{.3cm}    
 
+\end{itemize}
 
+\section{Pregunta 2}
 
+Sea E la curva elíptica $y^2=x^3 + x +28 $ mod 71 definida sobre $Z_{71}$
+ 
+\begin{itemize}
+\item[a] Calcula y muestra el número de puntos de a
+Para este ejercicio utilizamos un programa auxiliar de python debido a que este campo es de 71, eso implicaría calcular 71 puntos lo cual llevaría demasiado tiempo.\vspace{.3cm}
 
+Por lo cual con ayuda de una clase de python que creamos para el proyecto 3 de python  creamos este método que nos ayudo a hacer esos cálculos
+\begin{center}
 
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{Ejemplo1.png}
+\caption{Método auxiliar que nos permite encontrar los puntos de una curva}
+\label{fig:metoo auxiliar}
+\end{figure} 
+\end{center}	   
+Entonces los puntos que nos devuelve son 
+[ (1,32),   (1,39),   (2,31),   (2,40),   (3,22),   (3,49),   (4,5),   (4,66),   (5,4),   (5,67),   (6,26),   (6,45),   (12,8),   (12,63),   (13,26),   (13,45),   (15,9),   (15,62),   (19,27),   (19,44),   (20,5),   (20,66),   (21,3),   (21,68),   (22,30),   (22,41),   (23,19),   (23,52),   (25,22),   (25,49),   (27,0),   (31,32),   (31,39),   (33,1),   (33,70),   (34,23),   (34,48),   (35,14),   (35,57),   (36,12),   (36,59),   (37,33),   (37,38),   (39,32),   (39,39),   (41,7),   (41,64),   (43,22),   (43,49),   (47,5),   (47,66),   (48,11),   (48,60),   (49,24),   (49,47),   (52,26),   (52,45),   (53,0),   (58,27),   (58,44),   (61,15),   (61,56),   (62,0),   (63,17),   (63,54),   (65,27),   (65,44),   (66,18),   (66,53),   (69,35),   (69,36),'] Sin olvidar que además tenemos el punto $O$ por lo cual tenemos 72 distintos puntos :V 
+
+\item[2] Muesttra que E no es un grupo cíclico.
+
+\item[3] ¿Cuál es el máximo orden de un elemento en E? Encuentra un elemento que tenga dicho orden.
+
+Por definición, el orden de un punto P en una Curva , es el entero más grande n $\in$ $Z_p$ donde p =71 (en este caso)   tal que nP = $O$, por lo que lo que debemos encontrar es
+n max = max $\{  n|  nP = O , \forall P \in E \}$
+
+Para esto tendremos que ir sumando los puntos que encontramos en la pregunta 2 a, hasta hallar un número tal que su orden sea 72 (el maximo orden posible) entonces con ayuda de este script  en python verificamos uno a uno los puntos a ver cual nos da ese orden 
+ y vemos que un culpo que cumple eso es  (21,68)
+
+\begin{center}
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{Ejemplo2.png}
+\caption{Método auxiliar que nos permite encontrar el orden de un punto}
+\label{fig:metoo auxiliar}
+\end{figure} 
+\end{center}	
 
 \end{itemize}
+
 \end{document}
