@@ -116,8 +116,8 @@ class Curva:
 			return "y² = x³ + ("+str(self.a)+")x + "+str(self.b)+ " con Z: "+str(self.p) 
 
 #Haciendo tarea ejercicio 4
-punto1= Punto(0,4)
-curva = Curva(-20,21,5)
+punto1= Punto(15,-4)
+curva = Curva(-20,21,7)
 curva.calculaPuntosEncurva()
 print("punto 1: \n\t"+ str(punto1))
 print()
@@ -128,3 +128,5 @@ print("suma extendida")
 #print(punto1.suma(punto1,curva.a,curva.p))
 #print(punto1.inversoMultiplicativo(8,5))
 print(punto1.suma(punto1,curva.a,curva.p))
+print(punto1.inversoMultiplicativo(-15, 7))
+

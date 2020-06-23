@@ -32,8 +32,8 @@ Ahora hay que calcular x$_{3} = \lambda ^{2}- x_{1}- x_{2}$ y y$_{3} = \lambda(x
 
 \begin{itemize}
 \item[•] Calculando 3Q sobre E( mod 5)
-\\Hay que obtener 2Q, y esto es haciendo Q + Q, y como son iguales, entonces: $\lambda$ = (3x$_{1}^{2}$ + a)(2$y_{1})^{-1}$ 
-\\Entonces $\lambda$ = (3(15)$^{2}$ - 20)(2(-4))$^{-1}$(-8$^{-1} \equiv $2 mod 5) = (675-20)(13) mod 35 = 655(2) = 1310 mod 5\\
+\\Hay que obtener 2Q, y esto es haciendo Q + Q, y como son iguales, entonces:\\ $\lambda$ = (3x$_{1}^{2}$ + a)(2$y_{1})^{-1}$ 
+\\Entonces $\lambda$ = (3(15)$^{2}$ - 20)(2(-4))$^{-1}$(-8$^{-1} \equiv $2 mod 5) = (675-20)(2) mod 5 = 655(2) = 1310 mod 5\\
 $\lambda$ = 0 \\
 Ahora hay que calcular x$_{3} = \lambda ^{2}- x_{1}- x_{2}$ y y$_{3} = \lambda(x_{1} - x_{3})-y_{1}$
 \\x$_{3} = 0^{2}-15-15$ mod 5 
@@ -51,9 +51,25 @@ Ahora hay que calcular x$_{3} = \lambda ^{2}- x_{1}- x_{2}$ y y$_{3} = \lambda(x
 \\$\lambda$ = (3(0) -20)(2(4))$^{-1}$
 \\$\lambda$ = (-20)(8)$^{-1}$ ($8^{-1} \equiv$ 5 mod 5)
 \\$\lambda$ = (-20)(5) = -100 $\equiv$ 0 mod 5
-\\$x_{3}$ = (-$0)^{2}$ - 0 - 0 = 0 $\equiv$ 0 mod 5
-\\$y_{3}$ = 0(0-0)-4 = -4 $\equiv$ 1 mod 5
-\\Entonces 4Q = (0,1) y como no obtuvimos ningún error, no obtuvimos algún factor de factorización. Terminamos aquí.
+\\Entonces 4Q = (0,1) 
+\item[•] Calculando 3Q sobre E(mod 7)
+\\Hay que obtener 2Q, y esto es haciendo Q + Q, y como son iguales, entonces:\\ $\lambda$ = (3x$_{1}^{2}$ + a)(2$y_{1})^{-1}$ 
+\\$\lambda$ = (3(15)$^{2}$ - 20)(2(-4))$^{-1}$(-8$^{-1} \equiv $6 mod 7) = (675-20)(6) mod 7 = 655(6) = 3930 mod 7 = 3\\ 
+$\lambda = $3
+\\x$_{3} = 3^{2}-15-15$ mod 7 = 0
+\\y$_{3}$ = 3(15-0)+4 mod 7 = 0 .
+\\Entonces 2Q = (0,0)
+\\Ahora ya podemos obtener 3Q, y para esto hay que sumar (15,-4) y (0,0).
+\\Como son diferentes entonces $\lambda = (y_{2} - y_{1})(x_{2} - x_{1})^{-1}$
+\\$\lambda$ = (0+4)(0-15)$^{-1}$ =(4)(-15)$^{-1}$ ((-15)$^{-1} \equiv$ 6 mod 7)
+\\$\lambda$ = 4(6) = 24 mod 7 = 3 
+\\$\lambda$ = 3\\
+Ahora hay que calcular x$_{3} = \lambda ^{2}- x_{1}- x_{2}$ y y$_{3} = \lambda(x_{1} - x_{3})-y_{1}$
+\\x$_{3} = 3^{2}- 15 - 0$ = 9-15 = -6 $\equiv$ 1 mod 7
+\\y$_{3} = 3(15 - 1)+4$ = 46 $\equiv$ 4 mod 7
+\\Entonces 3Q = (1,4)
+\item[•] Calculando 4Q sobre E(mod 7)
+\\Del punto anterior ya tenemos 2Q, entonces hay que sumar 2Q + 2Q para obtener 4Q
 \end{itemize}
 \end{itemize}
 \item Sea E la curva elíptica $y^{2} =x^{3}+x+28 $ definida sobre $\mathbb{Z}_{71}$
