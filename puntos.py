@@ -128,5 +128,5 @@ print("suma extendida")
 #print(punto1.suma(punto1,curva.a,curva.p))
 #print(punto1.inversoMultiplicativo(8,5))
 print(punto1.suma(punto1,curva.a,curva.p))
-print(punto1.inversoMultiplicativo(-15, 7))
+print(punto1.inversoMultiplicativo(0, 7))
 
