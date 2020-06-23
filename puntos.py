@@ -28,7 +28,6 @@ class Punto:
     	y1=self.y
     	x2=punto2.x
     	y2=punto2.y
-    	denominador = self.inversoMultiplicativo(2*y1,p) % p
     	if(self.esIgual(punto2)):
     		x1=x1*x1
     		if (self.inversoMultiplicativo(2*y1,p)==-1):
@@ -117,8 +116,8 @@ class Curva:
 			return "y² = x³ + ("+str(self.a)+")x + "+str(self.b)+ " con Z: "+str(self.p) 
 
 #Haciendo tarea ejercicio 4
-punto1= Punto(9,14)
-curva = Curva(2,7,31)
+punto1= Punto(0,4)
+curva = Curva(-20,21,5)
 curva.calculaPuntosEncurva()
 print("punto 1: \n\t"+ str(punto1))
 print()
@@ -126,6 +125,6 @@ print("suma extendida")
 #lista = punto1.sumaExtendida(punto1,curva.a,curva.p)
 #for i in range(0,len(lista)):
 #	print(str(i+1)+"P "+str(lista[i]))
+#print(punto1.suma(punto1,curva.a,curva.p))
+#print(punto1.inversoMultiplicativo(8,5))
 print(punto1.suma(punto1,curva.a,curva.p))
-print(punto1.inversoMultiplicativo(14,31))
-print(160 % 31)

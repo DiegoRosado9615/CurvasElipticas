@@ -49,17 +49,17 @@ Ahora hay que calcular x$_{3} = \lambda ^{2}- x_{1}- x_{2}$ y y$_{3} = \lambda(x
 \\Como son iguales 
 \\$\lambda$ = (3x$_{1}^{2}$ + a)(2$y_{1})^{-1}$
 \\$\lambda$ = (3(0) -20)(2(4))$^{-1}$
-\\$\lambda$ = (-20)(8)$^{-1}$ ($8^{-1} \equiv$ 3 mod 5)
-\\$\lambda$ = (-20)(3) = -60
-\\$x_{3}$ = (-$60)^{2}$ - 0 - 0 = 3600 $\equiv$ 0 mod 5
-\\$y_{3}$ = -60(0-3600)-4 = 215996 $\equiv$ 1 mod 5
-\\
+\\$\lambda$ = (-20)(8)$^{-1}$ ($8^{-1} \equiv$ 5 mod 5)
+\\$\lambda$ = (-20)(5) = -100 $\equiv$ 0 mod 5
+\\$x_{3}$ = (-$0)^{2}$ - 0 - 0 = 0 $\equiv$ 0 mod 5
+\\$y_{3}$ = 0(0-0)-4 = -4 $\equiv$ 1 mod 5
+\\Entonces 4Q = (0,1) y como no obtuvimos ningún error, no obtuvimos algún factor de factorización. Terminamos aquí.
 \end{itemize}
 \end{itemize}
 \item Sea E la curva elíptica $y^{2} =x^{3}+x+28 $ definida sobre $\mathbb{Z}_{71}$
 \begin{itemize}
 \item[a)] Calcula y muestra el número de puntos de E.\\
-Puntos:\\ $O$, (1,32),
+\\ $O$, (1,32),
 (1,39),
 (2,31),
 (2,40),
@@ -129,11 +129,11 @@ Puntos:\\ $O$, (1,32),
 (66,18),
 (66,53),
 (69,35),
-(69,36).
+(69,36).\\
+\item[b)] Muestra que E no es un grupo cíclico.\\\\
 
-
-\item[b)] Muestra que E no es un grupo cíclico.
-\item[c)] ¿Cuál es el máximo orden de un elemento en E? Encuentra un elemento que tenga ese orden.
+\item[c)] ¿Cuál es el máximo orden de un elemento en E? Encuentra un elemento que
+tenga ese orden. \\\\
 \end{itemize}
 \item Sea E :$y^{2}-2=x^{3}+333x$ sobre $\mathbb{F}_{347}$ y sea P = (110,136).
 \begin{itemize}
@@ -147,7 +147,7 @@ Entonces 347$|$558414 - 30974 = 1520, P $\in F_{347}$
 \item[b)] si sabemos que $|E| = 358$ ¿Podemos decir E es criptográficamente útil?
 ¿Cuál es el orden de P? ¿Entre que valores se puede escojer la clave privada?
 \\\\El orden de P = 179. E no es criptográficamente útil, ya que no es capaz de dividir a un número primo grande, este número se determina por 172*2, siendo 2 nuestro primo.\\
-\item[c)] si tu clave privada es k=101 y algún conocido te ha enviado el mensaje cifrado (M$_1$=(232,278) y M$_2$=(135,214)) ¿Cuál era el mensaje original?\\
+\item[c)] si tu clave privada es k=101 y algún conocido te ha enviado el mensaje cifrado (M$_1$=(232,278) y M$_2$=(135,214)) ¿Cuál era el mensaje original?\\\\
 $M=M_2 - kM_1$\\
 $M=(135,214)-101(232,278)$\\
 aplicando sumas consecutivas -101(232,278) = (275,176)\\
