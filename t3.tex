@@ -5,8 +5,10 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Castro Mejia Jonatan Alejandro \\ 314027687}
+\author{Castro Mejia Jonatan Alejandro 314027687\\ Rosado cabrera Diego  314293804}
+
 \title{Tarea 3 \\Criptografía y Seguridad \\ Curvas Elípticas}
+
 \begin{document}
 \maketitle
 \begin{enumerate}
@@ -83,7 +85,13 @@ Ahora hay que calcular x$_{3} = \lambda ^{2}- x_{1}- x_{2}$ y y$_{3} = \lambda(x
 \item Sea E la curva elíptica $y^{2} =x^{3}+x+28 $ definida sobre $\mathbb{Z}_{71}$
 \begin{itemize}
 \item[a)] Calcula y muestra el número de puntos de E.\\
-\\ $O$, (1,32),
+
+Para poder realizar este pegunta creamos una clase  curva en python debido a que realizarlo a mano nos tomaría demasiado tiempo por lo cual decidimos programarlo para que  nos dieran los puntos correspondientes los cuales anotamos a continuación (el código se puede ver en la imagen Calcula puntos) 
+
+
+\newpage 
+ $O$
+, (1,32),
 (1,39),
 (2,31),
 (2,40),
@@ -158,7 +166,33 @@ Ahora hay que calcular x$_{3} = \lambda ^{2}- x_{1}- x_{2}$ y y$_{3} = \lambda(x
 
 \item[c)] ¿Cuál es el máximo orden de un elemento en E? Encuentra un elemento que
 tenga ese orden. \\\\
+
+El máximo numero es 36, lo sabemos debido a que creamos un Sricpt en python que sacara el orden, modificando la instrucciones que hicimos para el script uno pudimos devolver una lista de puntos y a cada punto le sacábamos el orden con el  código que se puede ver en la imagen de orden  
+
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{CalculaPuntos.png}
+\caption{CalculaPuntos}
+\label{fig:orden}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{orden.png}
+\caption{orden}
+\label{fig:orden}
+
+\end{figure}
+
+Y para realizar la suma de puntos utilizábamos este método que creamos en una clase puntos se puede ver en la imagen de suma.  
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{suma.png}
+\caption{suma}
+\label{fig:orden}
+
+Ahora usando este codigo podemos decir que un punto que tiene orden 36 es aquel que se encuentra en la sexta posición de la lista es decir el punto (6,45) 
+\end{figure}
 \end{itemize}
+\newpage
 \item Sea E :$y^{2}-2=x^{3}+333x$ sobre $\mathbb{F}_{347}$ y sea P = (110,136).
 \begin{itemize}
 \item[a)] ¿Es Q=(81,-176) un punto de E?\\
