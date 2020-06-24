@@ -6,7 +6,7 @@ class Punto:
 		self.y=num2
 	"""Metodo que obtiene el inverso multiplicativo """
 	def inversoMultiplicativo(self,a, n):
-		a%=n;
+		a%=n
 		for i in range(1,n):
 			if ((a * i) % n == 1) :
 				return i;
@@ -206,9 +206,9 @@ class Curva:
 #El coeficiente de X^1 solamente le pasamos el uno
 punto1=Punto(0,1)
 primo=input("Introduce un numero: ")
-primo=int(primo)
+
 x=punto1.factorial(punto1,1,primo,1)
 print(x)
 z=int (primo/x)
-print ("Y el otro factor es ")
+print ("	Y el otro factor es ")
 print(z)
