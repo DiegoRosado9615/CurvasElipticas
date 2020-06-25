@@ -1,19 +1,25 @@
 """Clase que modela puntos"""
 class Punto:
-	"""Constructor de Puntos"""
+	
 	def __init__(self,num1,num2):
+		"""Constructor de Puntos"""
 		self.x=num1
 		self.y=num2
-	"""Metodo que obtiene el inverso multiplicativo """
+	
 	def inversoMultiplicativo(self,a, n):
-		a%=n;
+		"""Metodo que obtiene el inverso multiplicativo """
+		a%=n
 		for i in range(1,n):
 			if ((a * i) % n == 1) :
-				return i;
+				return i
 		return -1
-	"""Metodo que nos dice si 2 puntos son iguales o no
-	devuelve true si son iguales y false en otro caso """
+		
 	def esIgual(self,punto2):
+		"""
+		Metodo que nos dice si 2 puntos son iguales o no
+		devuelve true si son iguales y false en otro caso 
+		Punto 2 es un  un punto
+		"""
 		x1=self.x
 		y1=self.y
 		x2=punto2.x
@@ -23,12 +29,16 @@ class Punto:
 			return True
 		else:
 			return False
-	"""Metodo que obtiene el valor de la lambda
-	Devuelve una lista en la posición cero se encuentran los valores que si tuvi
-	eron un inverso y en la posicion uno un false, mientras los valores que no
-	tuvieron inverso  tienen en la posicion uno un true
-	"""
+	
 	def lambd(self,punto2,a,p):
+		"""Metodo que obtiene el valor de la lambda
+		Devuelve una lista en la posición cero se encuentran los valores que si tuvi
+		eron un inverso y en la posicion uno un false, mientras los valores que no
+		tuvieron inverso  tienen en la posicion uno un true
+		Este metodo recibe un punto 
+		a <- el valor de cofeciente  x^1
+		p <- es el valor de el numero de n donde  n es el producto  p y q donde p y q son primos  
+		"""
 		x1=self.x
 		y1=self.y
 		x2=punto2.x
@@ -51,9 +61,10 @@ class Punto:
 			valorFinal.append(((y2-y1)*self.inversoMultiplicativo(x2-x1, p))%p)
 			valorFinal.append(False)
 			return valorFinal
-	"""Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
-	sumar  y devuelve un nuevo punto o un mensaje de infinito"""
+
 	def suma(self,punto2,a,p):
+		"""Metodo que permite sumar 2 puntos,recibe el punto con el que se va a
+		sumar  y devuelve un nuevo punto o un mensaje de infinito"""
 		x1=self.x
 		y1=self.y
 		x2=punto2.x
@@ -78,6 +89,11 @@ class Punto:
 
 
 	def suma2(self,punto2,a,p):
+		"""
+		Este metodo fue utilizado para la tarea debido a que suma fue modificado para 
+		poder ser automatizado y en este solo sirve para hacer una suma una a una
+		Devuelve un punto 
+		"""
 		x1=self.x
 		y1=self.y
 		x2=punto2.x
@@ -99,10 +115,21 @@ class Punto:
 			return punto3
 
 	def creadorPuntos(self,x,y):
+		"""
+		Método que simplemente crea 2 puntos y recibe los valores de x & y
+		Devuelven un punto
+		"""
 		puntoNuevo=Punto(x,y)
 		return puntoNuevo
 
 	def sumaRepetida(self,numVeces,a,p):
+		"""
+		Método Que nos permite sumar repetidamente un punto tantas veces le indiquemos 
+		numVeces <- Es el numero de veces que se va a repetir el 
+		a<- Es el valor de cofeciente de x^1 
+		p <- es el numero n que esta formado por p y q donde p y q son primos
+		Devuelve un punto o puede devolver un entero en caso donde devuelva el entero
+		"""
 		contador=0
 		puntoNuevo=self.creadorPuntos(self.x,self.y)
 		informacion=[]
@@ -117,14 +144,31 @@ class Punto:
 		return puntoNuevo
 
 	def factorial(self,puntoInical,a,p,contador):
+		"""
+		Metodo que tiene un mal nombre devido que es quien hace la factorización 
+		funciona recursivamente donde el caso base es cuando tienes un entero
+		que debes ser,  p o q , en el otro caso sigue sumando los puntos con ayuda de suma
+		repetida 
+		punto incial un punto
+		a es un entero
+		p es un entero 
+		contador es un entero
+  		devuelve un entero 
+  		"""
 		print(puntoInical)
 		puntoInical=puntoInical.sumaRepetida(contador,a,p)
 		contador=contador+1
 		if( type(puntoInical) is int ) :
 			return puntoInical
 		return puntoInical.factorial(puntoInical,a,p,contador)
-	"""Metodo que saca el orden de un punto"""
+	
 	def calculaOrden(self,punto,a,p):
+		"""Metodo que saca el orden de un punto (Se uso en la tarea)
+		punto <- es un punto
+		a <- es un entero 
+		p <- es un entero
+		devuelve un entero
+    	"""
 		puntoNuevo=Punto(self.x,self.y)
 		puntoInfinito=Punto(-1,-1)
 		orden=1
